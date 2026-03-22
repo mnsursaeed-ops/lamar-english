@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎬 Learn English Through Life — لمار</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>:root{--bg:#0a0f1a;--bg2:#111827;--accent:#E6A817;--accent2:#FF6B35;--blue:#4A90D9;--green:#2ECC71;--red:#E74C3C;--purple:#9B59B6;--text:#F8F9FA;--muted:#8B95A5;--card:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.07)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Cairo',sans-serif;line-height:1.9}
+.en{font-family:'Poppins',sans-serif;direction:ltr;text-align:left}
+.page{display:none;min-height:100vh}.page.active{display:block}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:99;background:rgba(10,15,26,0.95);backdrop-filter:blur(15px);border-bottom:1px solid var(--border);padding:.5rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+nav.hide{transform:translateY(-100%)}
+.nav-logo{display:flex;align-items:center;gap:.4rem;cursor:pointer;font-weight:700;color:var(--accent)}
+.nav-r{display:flex;align-items:center;gap:1rem}
+.nav-prog{width:100px;height:5px;background:rgba(255,255,255,.05);border-radius:3px;overflow:hidden}
+.nav-prog-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:3px;transition:width .5s}
+.nav-txt{font-size:.7rem;color:var(--muted);font-family:'Poppins',sans-serif}
+.nav-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:.25rem .8rem;border-radius:15px;cursor:pointer;font-family:'Cairo',sans-serif;font-size:.75rem}
+.nav-btn:hover{border-color:var(--accent);color:var(--accent)}
+/* COVER */
+.cover{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;min-height:100vh;position:relative;overflow:hidden;background:linear-gradient(180deg,#050810,#0a0f1a 50%,#111827)}
+.cover::before{content:'';position:absolute;inset:-50%;width:200%;height:200%;background:radial-gradient(circle at 25% 30%,rgba(230,168,23,.08),transparent 45%),radial-gradient(circle at 75% 40%,rgba(74,144,217,.06),transparent 40%);animation:glow 20s ease-in-out infinite alternate}
+@keyframes glow{0%{transform:translate(0,0)}100%{transform:translate(-2%,-1%)}}
+.cover-c{position:relative;z-index:2;padding:2rem}
+.cover-top{font-size:.65rem;letter-spacing:4px;color:rgba(230,168,23,.4);font-family:'Poppins',sans-serif;margin-bottom:2rem}
+.c-name{font-size:4rem;font-weight:900;background:linear-gradient(135deg,#E6A817,#F4D03F,#E6A817);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shim 4s ease-in-out infinite;line-height:1.2}
+@keyframes shim{0%,100%{background-position:0%}50%{background-position:100%}}
+.c-name-en{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;color:rgba(230,168,23,.4);direction:ltr;margin-bottom:1.5rem}
+.c-div{width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);margin:0 auto 1.5rem}
+.c-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:white;direction:ltr;margin-bottom:.3rem}
+.c-titlear{font-size:1.3rem;color:rgba(255,255,255,.6);margin-bottom:1.2rem}
+.c-sub{font-size:.85rem;color:var(--muted);max-width:450px;margin:0 auto 1.5rem}
+.c-sub b{color:var(--accent)}
+.c-badges{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.cb{padding:.3rem .8rem;border-radius:25px;font-size:.7rem;font-weight:600}
+.cb1{background:rgba(74,144,217,.1);border:1px solid rgba(74,144,217,.2);color:var(--blue)}
+.cb2{background:rgba(230,168,23,.1);border:1px solid rgba(230,168,23,.2);color:var(--accent)}
+.cb3{background:rgba(46,204,113,.1);border:1px solid rgba(46,204,113,.2);color:var(--green)}
+.cb4{background:rgba(155,89,182,.1);border:1px solid rgba(155,89,182,.2);color:var(--purple)}
+.start-btn{display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(135deg,#E6A817,#F4D03F);color:var(--bg);padding:.8rem 2.5rem;border-radius:40px;font-weight:800;font-size:1.1rem;cursor:pointer;border:none;font-family:'Cairo',sans-serif;box-shadow:0 4px 25px rgba(230,168,23,.3);transition:all .3s}
+.start-btn:hover{transform:translateY(-2px);box-shadow:0 8px 35px rgba(230,168,23,.4)}
+/* LESSONS LIST */
+.list-page{padding:70px 1.5rem 2rem;max-width:800px;margin:0 auto}
+.list-hdr{text-align:center;margin-bottom:2rem}
+.list-hdr h1{font-size:1.6rem;margin-bottom:.3rem}
+.list-hdr p{color:var(--muted);font-size:.85rem}
+.lcard{display:flex;align-items:center;gap:.8rem;background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem 1.2rem;margin-bottom:.6rem;cursor:pointer;transition:all .25s}
+.lcard:hover{background:rgba(255,255,255,.07);border-color:rgba(230,168,23,.25);transform:translateX(-3px)}
+.lcard.done{border-color:rgba(46,204,113,.2)}
+.lcard.empty{opacity:.35;cursor:default}
+.lnum{width:40px;height:40px;border-radius:12px;background:rgba(74,144,217,.12);color:var(--blue);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:'Poppins',sans-serif;flex-shrink:0;border:1px solid rgba(74,144,217,.2)}
+.lcard .info{flex:1}
+.lcard .ten{font-family:'Poppins',sans-serif;font-weight:600;font-size:.9rem;color:white;direction:ltr;text-align:left}
+.lcard .tar{font-size:.8rem;color:var(--muted)}
+.lcard .sts{font-size:1.1rem;flex-shrink:0}
+/* LESSON VIEW */
+.lesson-pg{padding:50px 0 3rem}
+.l-hero{padding:3rem 1.5rem;text-align:center;background:linear-gradient(180deg,var(--bg2),var(--bg));position:relative}
+.l-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(230,168,23,.05),transparent 60%)}
+.l-hero>*{position:relative;z-index:1}
+.l-badge{display:inline-block;background:rgba(230,168,23,.12);border:1px solid rgba(230,168,23,.25);border-radius:40px;padding:.3rem 1rem;font-size:.7rem;color:var(--accent);margin-bottom:1rem}
+.l-num{font-family:'Playfair Display',serif;font-size:5rem;font-weight:900;background:linear-gradient(135deg,#E6A817,#F4D03F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1}
+.l-hero h1{font-family:'Playfair Display',serif;font-size:2rem;color:white;direction:ltr;margin-bottom:.2rem}
+.l-hero .sub{font-size:1.2rem;color:var(--accent)}
+.sec{max-width:850px;margin:0 auto;padding:2.5rem 1.5rem}
+.sec-h{display:flex;align-items:center;gap:.8rem;margin-bottom:1.8rem;padding-bottom:.6rem;border-bottom:1px solid var(--border)}
+.sec-ic{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.ic-gold{background:rgba(230,168,23,.12);border:1px solid rgba(230,168,23,.2)}
+.ic-blue{background:rgba(74,144,217,.12);border:1px solid rgba(74,144,217,.2)}
+.ic-green{background:rgba(46,204,113,.12);border:1px solid rgba(46,204,113,.2)}
+.ic-red{background:rgba(231,76,60,.12);border:1px solid rgba(231,76,60,.2)}
+.ic-purple{background:rgba(155,89,182,.12);border:1px solid rgba(155,89,182,.2)}
+.ic-orange{background:rgba(255,107,53,.12);border:1px solid rgba(255,107,53,.2)}
+.sec-t{font-size:1.2rem;font-weight:700}
+.sec-t small{display:block;font-family:'Poppins',sans-serif;font-size:.65rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:2px}
+.dvd{height:40px;position:relative}.dvd::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100px;height:1px;background:linear-gradient(90deg,transparent,rgba(230,168,23,.3),transparent)}
+/* CINEMA */
+.cin{border-radius:16px;overflow:hidden;margin:1rem 0}
+.cin-en{background:linear-gradient(135deg,#151d2e,#16213e);padding:2rem;font-family:'Poppins',sans-serif;direction:ltr;text-align:left;line-height:2;color:#ccc;border:1px solid rgba(74,144,217,.1);border-radius:16px 16px 0 0;font-size:.95rem}
+.cin-ar{background:linear-gradient(135deg,#1a0f2e,#0D1B2A);padding:2rem;line-height:2.2;color:#ccc;border:1px solid rgba(230,168,23,.1);border-radius:0 0 16px 16px;font-size:.95rem}
+.cin-lb{display:inline-block;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin-bottom:.8rem;padding:.15rem .6rem;border-radius:15px}
+.cin-lb.en{background:rgba(74,144,217,.12);color:var(--blue)}
+.cin-lb.ar{background:rgba(230,168,23,.12);color:var(--accent)}
+/* SPEAK BTN */
+.sp{width:30px;height:30px;border-radius:50%;border:1px solid rgba(74,144,217,.25);background:rgba(74,144,217,.08);color:var(--blue);cursor:pointer;font-size:.8rem;display:inline-flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;vertical-align:middle}
+.sp:hover{background:rgba(74,144,217,.2);transform:scale(1.1)}
+.sp.on{background:var(--blue);color:white;animation:pls 1s infinite}
+@keyframes pls{0%,100%{box-shadow:0 0 0 0 rgba(74,144,217,.3)}50%{box-shadow:0 0 0 5px rgba(74,144,217,0)}}
+/* TABLES */
+table{width:100%;border-collapse:separate;border-spacing:0;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin:.8rem 0}
+thead{background:rgba(74,144,217,.06)}
+th{padding:.6rem .8rem;font-size:.7rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;text-align:center}
+td{padding:.6rem .8rem;border-bottom:1px solid var(--border);font-size:.85rem;text-align:center}
+tr:last-child td{border-bottom:none}
+tr:hover{background:rgba(255,255,255,.02)}
+.tden{font-family:'Poppins',sans-serif;direction:ltr;text-align:left}
+/* VOCAB TABLE */
+.vtd-w{font-weight:600;color:white;cursor:pointer}
+.vtd-w:hover{color:var(--accent)}
+.vtd-p{font-size:.7rem;color:var(--muted);font-family:'Poppins',sans-serif}
+.vtd-ar{color:var(--accent);font-weight:600}
+.vtd-ex{font-size:.8rem;color:#aaa;font-family:'Poppins',sans-serif;direction:ltr;text-align:left}
+.vtd-exa{font-size:.8rem;color:var(--muted)}
+/* GRAMMAR */
+.gr-box{background:rgba(46,204,113,.05);border:1px solid rgba(46,204,113,.12);border-radius:16px;padding:1.5rem;margin:1rem 0}
+.gr-formula{font-family:'Poppins',sans-serif;direction:ltr;text-align:center;font-size:1.1rem;font-weight:700;padding:.8rem;background:rgba(0,0,0,.25);border-radius:10px;margin:.6rem 0;color:var(--green)}
+.gr-formula b{color:var(--accent)}
+thead.gr-th{background:rgba(46,204,113,.06)}
+.gr-th th{color:var(--green)}
+/* COLLOCATION */
+.coll-w{display:flex;align-items:center;gap:.5rem;padding:.5rem .8rem;background:rgba(231,76,60,.05);border:1px solid rgba(231,76,60,.1);border-radius:8px;margin-bottom:.4rem;font-family:'Poppins',sans-serif;direction:ltr;text-align:left;color:#d88;text-decoration:line-through;font-size:.85rem}
+.coll-r{display:flex;align-items:center;gap:.5rem;padding:.5rem .8rem;background:rgba(46,204,113,.05);border:1px solid rgba(46,204,113,.1);border-radius:8px;margin-bottom:.4rem;font-family:'Poppins',sans-serif;direction:ltr;text-align:left;color:#6d6;font-weight:600;font-size:.85rem}
+.coll-t{font-size:.75rem;color:var(--muted);padding-right:1.5rem;margin-bottom:1rem}
+/* EXPRESSIONS */
+.expr-card{display:flex;align-items:flex-start;gap:.6rem;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.03)}
+.expr-card:last-child{border:none}
+.expr-b{font-size:.55rem;padding:.15rem .4rem;border-radius:6px;font-weight:700;flex-shrink:0;margin-top:.3rem}
+.expr-b.f{background:rgba(74,144,217,.1);color:var(--blue)}
+.expr-b.i{background:rgba(46,204,113,.1);color:var(--green)}
+.expr-en{font-family:'Poppins',sans-serif;font-weight:600;color:white;direction:ltr;text-align:left;font-size:.9rem}
+.expr-ar{font-size:.8rem;color:var(--accent)}
+.expr-w{font-size:.7rem;color:var(--muted)}
+/* DIALOGUE */
+.dl-box{background:var(--bg2);border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.dl-hdr{background:rgba(230,168,23,.05);padding:.8rem 1.2rem;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.9rem}
+.dl-play{display:flex;align-items:center;gap:.6rem;padding:.6rem 1.2rem;background:rgba(0,0,0,.2)}
+.pbtn{display:inline-flex;align-items:center;gap:.3rem;padding:.4rem 1rem;border-radius:20px;border:none;background:linear-gradient(135deg,#E6A817,#F4D03F);color:var(--bg);font-weight:700;font-size:.8rem;cursor:pointer;font-family:'Cairo',sans-serif}
+.pbtn.on{background:linear-gradient(135deg,#E74C3C,#FF6B35);color:white}
+.spd{padding:.15rem .4rem;border-radius:10px;border:1px solid var(--border);background:none;color:var(--muted);cursor:pointer;font-size:.65rem;font-family:'Poppins',sans-serif}
+.spd:hover,.spd.a{background:rgba(230,168,23,.1);border-color:rgba(230,168,23,.2);color:var(--accent)}
+.dl-body{padding:1.2rem}
+.dl-line{display:flex;gap:.6rem;margin-bottom:.8rem;align-items:flex-start}
+.dl-av{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.dl-av.you{background:rgba(230,168,23,.12);border:1px solid rgba(230,168,23,.2)}
+.dl-av.oth{background:rgba(74,144,217,.12);border:1px solid rgba(74,144,217,.2)}
+.dl-bub{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;padding:.6rem .8rem;max-width:85%}
+.dl-e{font-family:'Poppins',sans-serif;direction:ltr;text-align:left;color:#ddd;font-size:.85rem}
+.dl-e strong{color:var(--accent)}
+.dl-a{font-size:.75rem;color:var(--muted);margin-top:.2rem}
+/* KILLER */
+.klr{background:rgba(231,76,60,.04);border:1px solid rgba(231,76,60,.1);border-radius:14px;padding:1.2rem;margin-bottom:.8rem;border-right:3px solid var(--red)}
+.klr-tag{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);margin-bottom:.6rem}
+.klr-w{font-family:'Poppins',sans-serif;direction:ltr;text-align:left;background:rgba(231,76,60,.06);border-radius:6px;padding:.4rem .8rem;color:#d88;text-decoration:line-through;margin-bottom:.3rem;font-size:.85rem}
+.klr-r{font-family:'Poppins',sans-serif;direction:ltr;text-align:left;background:rgba(46,204,113,.06);border-radius:6px;padding:.4rem .8rem;color:#6d6;font-weight:600;margin-bottom:.4rem;font-size:.85rem}
+.klr-y{background:rgba(230,168,23,.05);border-radius:6px;padding:.4rem .8rem;font-size:.8rem;color:var(--muted)}
+.klr-y b{color:var(--accent)}
+/* CULTURE */
+.cult{background:rgba(155,89,182,.05);border:1px solid rgba(155,89,182,.1);border-radius:14px;padding:1.5rem}
+.cult-t{color:var(--purple);font-weight:700;margin-bottom:.6rem}
+/* CHALLENGES */
+.ch-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.2rem;margin-bottom:.8rem}
+.ch-tag{display:inline-block;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:.15rem .6rem;border-radius:12px;margin-bottom:1rem}
+.ch-mc{background:rgba(74,144,217,.1);color:var(--blue)}
+.ch-fb{background:rgba(46,204,113,.1);color:var(--green)}
+.qi{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.03)}.qi:last-child{border:none}
+.qt{font-weight:600;margin-bottom:.3rem;font-size:.9rem}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:.3rem}
+.opt{font-family:'Poppins',sans-serif;direction:ltr;text-align:left;padding:.35rem .6rem;background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:7px;font-size:.8rem;color:#bbb;cursor:pointer;transition:all .2s}
+.opt:hover{background:rgba(74,144,217,.06);border-color:rgba(74,144,217,.2)}
+.opt.ok{background:rgba(46,204,113,.1);border-color:var(--green);color:var(--green)}
+.opt.no{background:rgba(231,76,60,.08);border-color:var(--red);color:var(--red)}
+/* LISTENING */
+.lis-box{background:rgba(74,144,217,.04);border:1px solid rgba(74,144,217,.1);border-radius:14px;padding:1.5rem}
+.lis-play{display:flex;align-items:center;gap:.8rem;background:rgba(0,0,0,.2);border-radius:10px;padding:.6rem 1rem;margin-bottom:1rem}
+.lis-btn{width:40px;height:40px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--blue),var(--green));color:white;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.blank{display:inline-block;width:90px;padding:.2rem .4rem;border:none;border-bottom:2px solid rgba(74,144,217,.3);background:rgba(74,144,217,.05);color:white;font-family:'Poppins',sans-serif;font-size:.85rem;text-align:center;outline:none;border-radius:3px 3px 0 0;direction:ltr}
+.blank:focus{border-bottom-color:var(--accent)}.blank.ok{border-bottom-color:var(--green);color:var(--green)}.blank.no{border-bottom-color:var(--red);color:var(--red)}
+.lq{padding:.4rem 0;font-family:'Poppins',sans-serif;direction:ltr;text-align:left;font-size:.85rem;color:#bbb;line-height:2.2}
+.chk-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1.2rem;border-radius:20px;border:none;background:linear-gradient(135deg,var(--blue),var(--green));color:white;font-weight:700;font-size:.8rem;cursor:pointer;font-family:'Cairo',sans-serif;margin-top:.8rem}
+.res-box{margin-top:.6rem;padding:.6rem;border-radius:8px;font-weight:600;text-align:center;font-size:.85rem;display:none}
+/* REPEAT */
+.rep-item{display:flex;align-items:center;gap:.6rem;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.03)}.rep-item:last-child{border:none}
+.rep-en{font-family:'Poppins',sans-serif;direction:ltr;text-align:left;color:#ddd;flex:1;font-size:.85rem}
+.rep-ar{font-size:.75rem;color:var(--muted)}
+/* HOMEWORK */
+.hw-card{display:flex;gap:.6rem;align-items:flex-start;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem;margin-bottom:.5rem}
+.hw-n{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#F4D03F);color:var(--bg);display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+.hw-en{font-family:'Poppins',sans-serif;direction:ltr;text-align:left;font-size:.85rem;color:white}
+.hw-ar{font-size:.75rem;color:var(--muted)}
+/* UNLOCK */
+.unlock{text-align:center;padding:2.5rem 1.5rem}
+.u-badge{display:inline-flex;flex-direction:column;align-items:center;gap:.6rem;background:rgba(230,168,23,.06);border:2px solid rgba(230,168,23,.2);border-radius:20px;padding:2rem 3rem;margin-bottom:1.2rem}
+.u-icon{font-size:3rem}.u-text{font-size:1.2rem;font-weight:800;color:var(--accent)}.u-sub{color:var(--muted);font-size:.8rem}
+.skills-r{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;max-width:550px;margin:1rem auto}
+.sk-tag{display:flex;align-items:center;gap:.3rem;background:rgba(46,204,113,.05);border:1px solid rgba(46,204,113,.1);border-radius:8px;padding:.35rem .6rem;font-size:.75rem}
+.sk-tag .c{color:var(--green)}
+.done-btn{display:inline-flex;align-items:center;gap:.4rem;background:linear-gradient(135deg,var(--accent),#F4D03F);color:var(--bg);padding:.7rem 2rem;border-radius:35px;font-weight:700;font-size:.95rem;cursor:pointer;border:none;font-family:'Cairo',sans-serif;margin-top:1.2rem;box-shadow:0 4px 15px rgba(230,168,23,.25)}
+.done-btn:hover{transform:translateY(-2px)}
+/* AUDIO BAR */
+.abar{position:fixed;bottom:0;left:0;right:0;background:rgba(10,15,26,.95);backdrop-filter:blur(15px);border-top:1px solid rgba(230,168,23,.15);padding:.5rem 1.5rem;display:flex;align-items:center;justify-content:center;gap:.8rem;z-index:100;transform:translateY(100%);transition:transform .3s}
+.abar.show{transform:translateY(0)}
+.abar-txt{font-size:.75rem;color:var(--accent);font-family:'Poppins',sans-serif;max-width:180px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;direction:ltr}
+.abar-stop{padding:.2rem .6rem;border-radius:12px;border:1px solid rgba(231,76,60,.2);background:rgba(231,76,60,.08);color:var(--red);cursor:pointer;font-size:.7rem;font-family:'Cairo',sans-serif}
+/* ANSWERS */
+.ans{background:rgba(46,204,113,.04);border:1px solid rgba(46,204,113,.08);border-radius:12px;padding:1rem;margin-top:.6rem}
+.ans-i{padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.02);font-size:.85rem}.ans-i:last-child{border:none}
+.ans-ok{color:var(--green);font-weight:600}
+.ans-y{color:var(--muted);font-size:.75rem}
+/* RESPONSIVE */
+@media(max-width:768px){.c-name{font-size:2.8rem}.c-name-en{font-size:1.4rem}.opts{grid-template-columns:1fr}.l-num{font-size:3.5rem}.l-hero h1{font-size:1.4rem}}
+
+/* MENU BUTTONS */
+.menu-btns{display:flex;justify-content:center;gap:.6rem;flex-wrap:wrap;margin-top:1.2rem;margin-bottom:1rem}
+.menu-btn{padding:.5rem 1.2rem;border-radius:25px;border:1px solid var(--border);background:var(--card);color:var(--text);cursor:pointer;font-family:'Cairo',sans-serif;font-size:.8rem;font-weight:600;transition:all .25s;display:flex;align-items:center;gap:.4rem}
+.menu-btn:hover{border-color:rgba(230,168,23,.3);background:rgba(230,168,23,.08);color:var(--accent);transform:translateY(-2px)}
+/* VERBS & VOWELS PAGES */
+.ref-page{padding:70px 1.5rem 2rem;max-width:900px;margin:0 auto}
+.ref-page h1{font-size:1.6rem;text-align:center;margin-bottom:.3rem}
+.ref-page .sub{text-align:center;color:var(--muted);font-size:.85rem;margin-bottom:2rem}
+</style>
+</head>
+<body>
+
+<nav id="nav" class="hide">
+  <div class="nav-logo" onclick="goHome()">🎬 <span>English Through Life</span></div>
+  <div class="nav-r">
+    <div class="nav-prog"><div class="nav-prog-fill" id="progFill" style="width:0%"></div></div>
+    <span class="nav-txt" id="progTxt">0/16</span>
+    <button class="nav-btn" onclick="goBack()">→ رجوع</button>
+  </div>
+</nav>
+
+<div class="abar" id="audioBar">
+  <div class="abar-txt" id="abar-txt">...</div>
+  <button class="abar-stop" onclick="stopA()">⏹ إيقاف</button>
+</div>
+
+<!-- ===== COVER ===== -->
+<div class="page active" id="pgCover">
+  <section class="cover">
+    <div class="cover-c">
+      <div class="cover-top">✦ PREMIUM DIGITAL COURSE ✦</div>
+      <div style="font-size:.8rem;color:var(--muted);margin-bottom:.3rem">هذا الكتاب مصمم خصيصاً لـ</div>
+      <div class="c-name">لمار</div>
+      <div class="c-name-en">LAMAR</div>
+      <div class="c-div"></div>
+      <div class="c-title">Learn English Through Life</div>
+      <div class="c-titlear">تعلّمي الإنجليزي من خلال الحياة 🎬</div>
+      <div class="c-sub">مو كتاب عادي — هذي <b>رحلة سينمائية</b> تعيشينها مشهد بمشهد<br>كل كلمة تقدرين تسمعينها 🔊</div>
+      <div class="c-badges">
+        <span class="cb cb1">📖 ١٦ درس</span>
+        <span class="cb cb2">🔊 صوتيات واقعية</span>
+        <span class="cb cb3">📊 ٥٠ فعل بكل الأزمنة</span>
+        <span class="cb cb4">🔤 دليل حروف العلة</span>
+      </div>
+      <button class="start-btn" onclick="goList()">🚀 ابدأي الدروس</button>
+      <div class="menu-btns">
+        <button class="menu-btn" onclick="goVerbs()">📊 حفظ الأفعال والأزمنة</button>
+        <button class="menu-btn" onclick="goVowels()">🔤 حروف العلة</button>
+      </div>
+      <div style="font-size:.85rem;color:rgba(230,168,23,.4);margin-top:1rem;font-style:italic">"أنا ما أدرس إنجليزي… أنا أعيشه." 🔥</div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== LESSONS LIST ===== -->
+<div class="page" id="pgList">
+  <div class="list-page">
+    <div class="list-hdr">
+      <h1>🔰 المستوى الأول — البداية</h1>
+      <p>اضغطي على أي درس — كل كلمة وجملة تقدرين تسمعينها 🔊</p>
+      <div class="menu-btns" style="margin-top:.8rem">
+        <button class="menu-btn" onclick="goVerbs()">📊 الأفعال والأزمنة</button>
+        <button class="menu-btn" onclick="goVowels()">🔤 حروف العلة</button>
+      </div>
+    </div>
+    <div id="listGrid"></div>
+  </div>
+</div>
+
+<!-- ===== LESSON VIEW ===== -->
+<div class="page" id="pgLesson">
+  <div class="lesson-pg" id="lessonBox"></div>
+</div>
+
+<!-- ===== VERBS & TENSES ===== -->
+<div class="page" id="pgVerbs">
+  <div class="ref-page">
+    <h1>📊 الأفعال في كل الأزمنة</h1>
+    <div class="sub">٥٠ فعل أساسي — اضغطي على أي فعل لسماعه 🔊</div>
+    <div id="verbsContent"></div>
+  </div>
+</div>
+
+<!-- ===== VOWELS ===== -->
+<div class="page" id="pgVowels">
+  <div class="ref-page">
+    <h1>🔤 دليل حروف العلة</h1>
+    <div class="sub">A E I O U — كل حرف له أصوات مختلفة — اضغطي لسماعها 🔊</div>
+    <div id="vowelsContent"></div>
+  </div>
+</div>
+
+<script>
+const LD = {"1": {"t": "Waking Up & Morning Routine", "ta": "الصباح والروتين اليومي", "ic": "☀️", "gr": "Present Simple", "gra": "المضارع البسيط", "grd": "نستخدمه للعادات والأشياء اللي نسويها كل يوم", "grf": "I/You/We/They + verb ، He/She/It + verb+s", "grex": [["I wake up at 6.", "أصحى الساعة ٦."], ["She wakes up at 7.", "تصحى الساعة ٧."], ["I don't skip breakfast.", "ما أطنّش الفطور."], ["Does he drink coffee?", "يشرب قهوة؟"]], "cin": ["The alarm screams at 6:30 AM. You open your eyes slowly. The room is still dark. Your flight to London is in five hours. Today you start your new life — in English.", "المنبه يرن الساعة ٦:٣٠. تفتحين عيونك ببطء. الغرفة لسا مظلمة. رحلتك للندن بعد ٥ ساعات. اليوم تبدأين حياتك الجديدة بالإنجليزي."], "v": [["alarm", "/əˈlɑːrm/", "منبه", "My alarm rings at 6:30.", "المنبه يرن ٦:٣٠."], ["pillow", "/ˈpɪloʊ/", "مخدة", "I need two pillows.", "أحتاج مخدتين."], ["blanket", "/ˈblæŋkɪt/", "بطانية", "It's cold — I need a blanket.", "برد — أحتاج بطانية."], ["shower", "/ˈʃaʊər/", "دش", "I take a quick shower.", "آخذ دش سريع."], ["towel", "/ˈtaʊəl/", "منشفة", "The towel is in the bathroom.", "المنشفة في الحمام."], ["toothbrush", "/ˈtuːθbrʌʃ/", "فرشاة أسنان", "Where is my toothbrush?", "وين فرشاتي؟"], ["mirror", "/ˈmɪrər/", "مرآة", "I look in the mirror.", "أطالع المرآة."], ["breakfast", "/ˈbrekfəst/", "فطور", "I have eggs for breakfast.", "آكل بيض فطور."], ["coffee", "/ˈkɒfi/", "قهوة", "I need my coffee first!", "أبي قهوتي أول!"], ["clothes", "/kloʊðz/", "ملابس", "I pick my clothes at night.", "أختار ملابسي من الليل."], ["suitcase", "/ˈsuːtkeɪs/", "شنطة سفر", "My suitcase is ready.", "شنطتي جاهزة."], ["tired", "/ˈtaɪərd/", "تعبانة", "I feel tired.", "حاسة بتعب."], ["ready", "/ˈredi/", "جاهزة", "Are you ready?", "جاهزة؟"], ["early", "/ˈɜːrli/", "بدري", "I wake up early.", "أصحى بدري."], ["quickly", "/ˈkwɪkli/", "بسرعة", "I get dressed quickly.", "ألبس بسرعة."]], "col": [["I open the alarm", "I set the alarm", "أضبط المنبه — مو أفتح"], ["I do a shower", "I take a shower", "آخذ دش — take + shower"], ["I open the light", "I turn on the light", "أشغّل النور — turn on/off"], ["I eat breakfast", "I have breakfast", "have مع الوجبات"], ["I wear my clothes", "I get dressed", "get dressed أطبع من wear"]], "ex": [["Good morning!", "صباح الخير!", "F", "مع أي شخص"], ["Rise and shine!", "قومي الدنيا نورت!", "I", "توقظين شخص"], ["I'm up.", "صحيت.", "I", "تبلغين إنك صاحية"], ["I'm running late!", "متأخرة!", "I", "ورا الوقت"], ["Just five more minutes...", "بس خمس دقايق...", "I", "ما تبين تقومين"], ["I'm not a morning person.", "مو شخصية صباحية.", "I", "تكرهين الصبح"], ["I need my coffee first.", "أبي قهوتي أول.", "I", "قبل أي شي"], ["I overslept!", "طوّلت بالنوم!", "I", "نمتِ أكثر"]], "dl": [["you", "Ugh... Five more minutes...", "أوف... خمس دقايق..."], ["you", "Okay okay. I'm up.", "طيب. قمت."], ["you", "Today is the day. London. Let's go.", "اليوم هو اليوم. لندن. يلا."], ["mom", "Are you awake? Breakfast is ready!", "صحيتِ؟ الفطور جاهز!"], ["you", "Coming! I need a quick shower!", "جاية! أبي دش سريع!"], ["mom", "Hurry up! Don't be late!", "استعجلي! لا تتأخرين!"], ["you", "Thanks Mom. The coffee smells amazing.", "يسلمو. القهوة ريحتها خيال."], ["mom", "Are you nervous?", "متوترة؟"], ["you", "A little. But I'm ready.", "شوي. بس جاهزة."], ["mom", "You're going to be great. I'm proud of you.", "بتكونين عظيمة. فخورة فيك."]], "kl": [["I am wake up at 6.", "I wake up at 6.", "المضارع البسيط ما يستخدم am مع أفعال الحركة"], ["He wake up early.", "He wakes up early.", "He/She/It دايم تحتاج -s"], ["I take breakfast.", "I have breakfast.", "have مع الوجبات"], ["I open the shower.", "I turn on the shower.", "الأجهزة: turn on/off"]], "cu": ["ثقافة الصباح", "في الغرب، 'How did you sleep?' سؤال عادي. الجواب قصير: 'Great, thanks!' — مو شرح عن أحلامك. وفي بريطانيا يقولون 'Morning!' بدون Good كتحية عادية."], "mc": [["I always ___ up at 7.", ["waking", "wake", "wakes", "am wake"], 1], ["She ___ her teeth twice a day.", ["brush", "brushs", "brushes", "is brush"], 2], ["___ he have breakfast?", ["Do", "Does", "Is", "Are"], 1], ["I'm not a morning ___.", ["man", "people", "person", "human"], 2]], "fb": [["I ___ (take/make) a shower.", "take"], ["She ___ (don't/doesn't) wake up early.", "doesn't"], ["I brush my teeth ___ (in/at) the morning.", "in"], ["He gets dressed ___ (quick/quickly).", "quickly"], ["We have breakfast ___ (at/in) 7:30.", "at"]], "hw": [["Describe your morning routine OUT LOUD.", "وصّفي روتينك بصوت عالي بالإنجليزي."], ["Send a voice message: Good morning!", "أرسلي رسالة صوتية."], ["Write 5 sentences about your morning.", "اكتبي ٥ جمل عن صباحك."], ["Watch a Morning Routine video on YouTube.", "شوفي فيديو عن الروتين الصباحي."], ["Label 5 bathroom items in English.", "حطي ملصقات على ٥ أشياء."]]}, "2": {"t": "At the Café", "ta": "في المقهى", "ic": "☕", "gr": "Present Simple — Questions", "gra": "المضارع البسيط — الأسئلة", "grd": "كيف نسأل أسئلة بالمضارع البسيط", "grf": "Do/Does + subject + verb?", "grex": [["Do you want sugar?", "تبين سكر؟"], ["Does she drink coffee?", "تشرب قهوة؟"], ["What do you recommend?", "وش توصون؟"], ["How much does it cost?", "كم سعره؟"]], "cin": ["You push open the door of a small London café. The smell of fresh coffee fills the air. A friendly barista smiles: 'Hi there! What can I get you?' Your heart beats fast. This is your first real English conversation.", "تدفعين باب مقهى صغير بلندن. ريحة القهوة تملأ المكان. الباريستا تبتسم: 'أهلاً! وش تبين؟' قلبك يدق. هذي أول محادثة إنجليزية حقيقية."], "v": [["menu", "/ˈmenjuː/", "قائمة", "Can I see the menu?", "ممكن القائمة؟"], ["order", "/ˈɔːrdər/", "طلب", "I'd like to order.", "أبي أطلب."], ["latte", "/ˈlɑːteɪ/", "لاتيه", "One latte, please.", "لاتيه واحد."], ["espresso", "/eˈspreso/", "إسبريسو", "A double espresso.", "إسبريسو دبل."], ["sugar", "/ˈʃʊɡər/", "سكر", "No sugar for me.", "بدون سكر."], ["milk", "/mɪlk/", "حليب", "Oat milk, please.", "حليب شوفان."], ["size", "/saɪz/", "حجم", "What size?", "أي حجم؟"], ["receipt", "/rɪˈsiːt/", "فاتورة", "Can I have the receipt?", "ممكن الفاتورة؟"], ["tip", "/tɪp/", "بقشيش", "Should I leave a tip?", "أخلي بقشيش؟"], ["seat", "/siːt/", "مقعد", "Is this seat taken?", "المقعد محجوز؟"], ["pastry", "/ˈpeɪstri/", "معجنات", "I'll have a pastry too.", "وكمان معجنات."], ["iced", "/aɪst/", "مثلج", "One iced coffee.", "قهوة مثلجة."], ["takeaway", "/ˈteɪkəweɪ/", "سفري", "For here or takeaway?", "هنا ولا سفري؟"], ["change", "/tʃeɪndʒ/", "باقي/فكة", "Keep the change.", "خلّي الباقي."], ["Wi-Fi", "/ˈwaɪfaɪ/", "واي فاي", "What's the Wi-Fi password?", "وش باسورد الواي فاي؟"]], "col": [["I want coffee", "I'd like a coffee, please", "I'd like أمهذب من I want"], ["Give me a latte", "Can I have a latte?", "Can I have أمهذب"], ["I pay by cash", "I'll pay in cash", "pay in cash مو by cash"], ["A coffee milk hot", "A hot coffee with milk", "الصفة قبل الاسم"], ["Where is the toilet?", "Where's the restroom?", "restroom أمهذب"]], "ex": [["I'd like a latte, please.", "أبي لاتيه لو سمحتِ.", "F", "لما تطلبين"], ["For here or to go?", "هنا ولا سفري؟", "F", "الكاشير يسألك"], ["Can I get the Wi-Fi password?", "ممكن باسورد الواي فاي؟", "I", "تبين إنترنت"], ["Keep the change.", "خلّي الباقي.", "I", "بقشيش"], ["Is this seat taken?", "المقعد محجوز؟", "F", "تبين تقعدين"], ["Could I have the bill?", "ممكن الحساب؟", "F", "تبين تدفعين"], ["Make it a large.", "خليه كبير.", "I", "حجم أكبر"], ["Can I change my order?", "ممكن أغير طلبي؟", "F", "غيرتِ رأيك"]], "dl": [["bar", "Hi there! What can I get you?", "أهلاً! وش أقدر أساعدك؟"], ["you", "Hi! I'd like a latte, please.", "هاي! أبي لاتيه."], ["bar", "Sure! What size? Small, medium, or large?", "أكيد! أي حجم؟"], ["you", "Medium, please.", "وسط."], ["bar", "Any milk preference? Oat, almond, or regular?", "أي حليب؟"], ["you", "Oat milk, please.", "حليب شوفان."], ["bar", "For here or to go?", "هنا ولا سفري؟"], ["you", "For here, please.", "هنا."], ["bar", "Anything else? A pastry maybe?", "شي ثاني؟ معجنات؟"], ["you", "No, that's all. Thank you!", "لا، بس كذا. شكراً!"], ["bar", "That'll be 4 pounds 50.", "٤ باوند ونص."], ["you", "Here you go. Keep the change.", "تفضلي. خلي الباقي."]], "kl": [["I want coffee.", "I'd like a coffee, please.", "I want وقحة — I'd like أمهذب"], ["Give me a latte.", "Can I have a latte?", "Can I have مو give me"], ["A milk coffee hot.", "A hot coffee with milk.", "الصفة قبل الاسم: hot coffee"], ["How much it costs?", "How much does it cost?", "السؤال يحتاج does"]], "cu": ["ثقافة المقاهي", "طبيعي تقعدين بالمقهى ساعات تشتغلين بدون أحد يزعجك. البقشيش مو إلزامي بالمقاهي لكن لطيف. 'For here or to go?' سؤال أساسي — جاوبي بثقة!"], "mc": [["___ I have a latte?", ["Do", "Can", "Am", "Is"], 1], ["Is this seat ___?", ["taking", "took", "taken", "take"], 2], ["I ___ like a medium coffee.", ["will", "would", "am", "do"], 1], ["___ much does it cost?", ["What", "Which", "How", "Where"], 2]], "fb": [["I'd ___ (like/want) a latte.", "like"], ["Is this ___ (for/to) here?", "for"], ["Can I ___ (get/take) the password?", "get"], ["I'll pay ___ (in/by) cash.", "in"], ["Keep the ___ (change/money).", "change"]], "hw": [["Order a coffee in English at a real café.", "اطلبي قهوة بالإنجليزي."], ["Learn 3 coffee types in English.", "تعلمي ٣ أنواع قهوة."], ["Write a café ordering dialogue.", "اكتبي حوار طلب في مقهى."], ["Ask for the Wi-Fi in English.", "اسألي عن الواي فاي."], ["Watch a Café English video.", "شوفي فيديو إنجليزي المقاهي."]]}, "3": {"t": "Grocery Shopping", "ta": "التسوق من البقالة", "ic": "🛒", "gr": "Present Simple — Negatives", "gra": "المضارع البسيط — النفي", "grd": "كيف ننفي الجملة بالمضارع البسيط", "grf": "I/You/We/They + don't + verb ، He/She/It + doesn't + verb", "grex": [["I don't eat meat.", "ما آكل لحم."], ["She doesn't like fish.", "ما تحب سمك."], ["We don't need bags.", "ما نحتاج أكياس."], ["It doesn't look fresh.", "ما يبان طازج."]], "cin": ["The supermarket doors slide open. Bright lights, rows and rows of products. Your shopping list is ready. A store employee asks: 'Can I help you find something?' You smile — you've got this.", "أبواب السوبرماركت تنفتح. أنوار ساطعة، صفوف منتجات. قائمة التسوق جاهزة. موظفة المحل تسأل: 'أساعدك؟' تبتسمين — جاهزة."], "v": [["cart", "/kɑːrt/", "عربة تسوق", "I need a shopping cart.", "أحتاج عربة."], ["aisle", "/aɪl/", "ممر", "Milk is in aisle 3.", "الحليب ممر ٣."], ["checkout", "/ˈtʃekaʊt/", "الكاشير", "The checkout line is long.", "طابور الكاشير طويل."], ["bag", "/bæɡ/", "كيس", "Do you need a bag?", "تحتاجين كيس؟"], ["fresh", "/freʃ/", "طازج", "These vegetables are fresh.", "الخضار طازجة."], ["frozen", "/ˈfroʊzən/", "مجمد", "I buy frozen pizza.", "أشتري بيتزا مجمدة."], ["organic", "/ɔːrˈɡænɪk/", "عضوي", "I prefer organic food.", "أفضل العضوي."], ["discount", "/ˈdɪskaʊnt/", "خصم", "Is there a discount?", "في خصم؟"], ["price", "/praɪs/", "سعر", "What's the price?", "كم السعر؟"], ["brand", "/brænd/", "ماركة", "Which brand?", "أي ماركة؟"], ["dairy", "/ˈderi/", "ألبان", "Where's the dairy section?", "وين قسم الألبان؟"], ["bakery", "/ˈbeɪkəri/", "مخبز", "Fresh bread from the bakery.", "خبز طازج من المخبز."], ["cashier", "/kæˈʃɪr/", "كاشير", "The cashier is friendly.", "الكاشير ودودة."], ["list", "/lɪst/", "قائمة", "I have a shopping list.", "عندي قائمة."], ["ripe", "/raɪp/", "ناضج/مستوي", "These bananas aren't ripe.", "الموز ما استوى."]], "col": [["How many costs this?", "How much does this cost?", "How much للسعر + does بالسؤال"], ["I want bag", "Can I have a bag?", "Can I have أمهذب"], ["Where is the milks?", "Where is the milk?", "milk غير معدود — بدون s"], ["I go to shopping", "I go shopping", "shopping ما تحتاج to"], ["The vegetables is fresh", "The vegetables are fresh", "vegetables جمع = are"]], "ex": [["Where can I find...?", "وين ألاقي...؟", "F", "تدورين منتج"], ["How much is this?", "كم هذا؟", "F", "تسألين عن السعر"], ["I'll take this one.", "بآخذ هذا.", "I", "تختارين منتج"], ["Do you accept cards?", "تقبلون بطاقات؟", "F", "طريقة الدفع"], ["Can I get a bag?", "ممكن كيس؟", "I", "تحتاجين كيس"], ["That's too expensive.", "غالي!", "I", "السعر عالي"], ["Is this on sale?", "عليه خصم؟", "I", "تدورين عرض"], ["Do you have...?", "عندكم...؟", "F", "تسألين عن منتج"]], "dl": [["emp", "Hi! Can I help you find something?", "أهلاً! أساعدك؟"], ["you", "Yes, where can I find the dairy section?", "إي، وين قسم الألبان؟"], ["emp", "It's in aisle 3, on your left.", "ممر ٣، على يسارك."], ["you", "Thank you! Do you have organic eggs?", "شكراً! عندكم بيض عضوي؟"], ["emp", "Yes, right next to the regular eggs.", "إي، جنب البيض العادي."], ["you", "How much are these?", "كم سعرهم؟"], ["emp", "Those are 2 pounds 50.", "٢ باوند ونص."], ["you", "I'll take them. Do you accept cards?", "بآخذهم. تقبلون بطاقات؟"], ["emp", "Yes! The checkout is over there.", "أكيد! الكاشير هناك."], ["you", "Do I need a bag?", "أحتاج كيس؟"], ["emp", "Bags are 10p each.", "الأكياس ١٠ بنس."]], "kl": [["How many costs this?", "How much does this cost?", "How much للسعر + does بالسؤال"], ["I don't need a bags.", "I don't need a bag.", "bag مفرد بعد a"], ["Where is the milks?", "Where is the milk?", "milk غير معدود — بدون s"], ["The vegetable are fresh.", "The vegetables are fresh.", "vegetables بالجمع"]], "cu": ["ثقافة السوبرماركت", "في بريطانيا الأكياس بفلوس (5-10 بنس). كثير ناس يجيبون أكياسهم. الطابور مقدس — ما أحد يتجاوز! وإذا دفعتِ بالبطاقة ممكن يطلبون PIN code."], "mc": [["Where ___ I find the milk?", ["do", "can", "am", "is"], 1], ["She ___ like frozen food.", ["don't", "doesn't", "isn't", "aren't"], 1], ["How ___ does it cost?", ["many", "much", "often", "long"], 1], ["The eggs ___ fresh.", ["isn't", "aren't", "don't", "doesn't"], 1]], "fb": [["Where ___ (is/are) the eggs?", "are"], ["I ___ (don't/doesn't) need a bag.", "don't"], ["How ___ (much/many) is this?", "much"], ["She ___ (go/goes) shopping every week.", "goes"], ["The milk ___ (is/are) in aisle 3.", "is"]], "hw": [["Go grocery shopping and name 10 items in English.", "روحي السوبرماركت وسمّي ١٠ منتجات."], ["Write your shopping list in English.", "اكتبي قائمة تسوقك بالإنجليزي."], ["Ask about prices in English next time.", "اسألي عن الأسعار بالإنجليزي."], ["Learn 5 fruit and 5 vegetable names.", "تعلمي ٥ فواكه و ٥ خضار."], ["Watch a grocery shopping video in English.", "شوفي فيديو تسوق بالإنجليزي."]]}, "4": {"t": "Asking for Directions", "ta": "السؤال عن الاتجاهات", "ic": "🗺️", "gr": "Prepositions of Place", "gra": "حروف الجر المكانية", "grd": "كلمات تساعدك توصفين المكان بالضبط", "grf": "on the left/right, next to, between, opposite, near", "grex": [["It's on the left.", "على اليسار."], ["It's next to the bank.", "جنب البنك."], ["It's between the café and the shop.", "بين المقهى والمحل."], ["Go straight, then turn right.", "روحي على طول، بعدين لفي يمين."]], "cin": ["You're standing at a crossroads in London. The map on your phone just died. People rush past you. You take a deep breath and approach a kind-looking stranger: 'Excuse me, how do I get to Oxford Street?'", "واقفة بتقاطع بلندن. خريطة جوالك طفت. الناس يمرون بسرعة. تاخذين نفس عميق وتسألين: 'لو سمحتِ، كيف أوصل أكسفورد ستريت؟'"], "v": [["turn", "/tɜːrn/", "لفي", "Turn left at the corner.", "لفي يسار عند الزاوية."], ["straight", "/streɪt/", "على طول", "Go straight.", "روحي على طول."], ["corner", "/ˈkɔːrnər/", "زاوية", "It's on the corner.", "عند الزاوية."], ["block", "/blɑːk/", "بلوك", "It's two blocks away.", "يبعد بلوكين."], ["opposite", "/ˈɑːpəzɪt/", "مقابل", "It's opposite the bank.", "مقابل البنك."], ["next to", "/nekst tuː/", "جنب", "It's next to the pharmacy.", "جنب الصيدلية."], ["between", "/bɪˈtwiːn/", "بين", "Between the bank and café.", "بين البنك والمقهى."], ["cross", "/krɑːs/", "اعبري", "Cross the street.", "اعبري الشارع."], ["map", "/mæp/", "خريطة", "I need a map.", "أحتاج خريطة."], ["lost", "/lɑːst/", "ضايعة", "I'm lost!", "أنا ضايعة!"], ["far", "/fɑːr/", "بعيد", "Is it far?", "بعيد؟"], ["nearby", "/nɪrˈbaɪ/", "قريب", "Is there a café nearby?", "في مقهى قريب؟"], ["traffic light", "/ˈtræfɪk laɪt/", "إشارة مرور", "Turn at the traffic light.", "لفي عند الإشارة."], ["roundabout", "/ˈraʊndəbaʊt/", "دوّار", "Take the second exit.", "خذي المخرج الثاني."], ["pedestrian", "/pəˈdestriən/", "مشاة", "Use the pedestrian crossing.", "استخدمي معبر المشاة."]], "col": [["Go to straight", "Go straight", "straight ما تحتاج to"], ["It's in the left", "It's on the left", "on the left/right"], ["Where is the Oxford Street?", "Where is Oxford Street?", "أسماء الشوارع بدون the"], ["I am lost", "I'm lost", "نستخدم I'm مو I am بالمحادثة"], ["Turn in left", "Turn left", "turn left بدون in"]], "ex": [["Excuse me, how do I get to...?", "لو سمحتِ، كيف أوصل...؟", "F", "تسألين عن مكان"], ["Is it far from here?", "بعيد من هنا؟", "F", "تسألين عن المسافة"], ["Can you show me on the map?", "توريني على الخريطة؟", "F", "ما فهمتِ"], ["I'm lost.", "ضايعة.", "I", "ما تعرفين وينك"], ["Turn left/right.", "لفي يسار/يمين.", "F", "توجيهات"], ["Go straight ahead.", "على طول.", "F", "توجيهات"], ["It's on the left/right.", "على اليسار/اليمين.", "F", "تحديد مكان"], ["You can't miss it!", "مستحيل تفوتك!", "I", "المكان واضح"]], "dl": [["you", "Excuse me, how do I get to Oxford Street?", "لو سمحتِ، كيف أوصل أكسفورد ستريت؟"], ["str", "Sure! Go straight for two blocks.", "أكيد! على طول بلوكين."], ["you", "Straight for two blocks...", "على طول بلوكين..."], ["str", "Then turn left at the traffic lights.", "بعدين لفي يسار عند الإشارة."], ["you", "Turn left at the lights. Got it.", "يسار عند الإشارة. تمام."], ["str", "Cross the street. It's on your right.", "اعبري الشارع. على يمينك."], ["you", "Is it far?", "بعيد؟"], ["str", "No, about 5 minutes walking.", "لا، ٥ دقايق مشي."], ["you", "Thank you so much!", "شكراً جزيلاً!"], ["str", "You're welcome! You can't miss it.", "عفواً! مستحيل تفوتك."]], "kl": [["Where is the Oxford Street?", "Where is Oxford Street?", "أسماء الشوارع بدون the"], ["Go to straight.", "Go straight.", "straight ما تحتاج to"], ["It's in the left.", "It's on the left.", "on the left مو in"], ["Turn in left.", "Turn left.", "turn left بدون حرف جر"]], "cu": ["ثقافة الاتجاهات", "البريطانيين يحبون يساعدون! لو ضعتِ اسألي أي شخص. بس تذكري: في بريطانيا يمشون على اليسار ويسوقون على اليسار! و 'cheers' تعني 'شكراً' مو بس للنخب."], "mc": [["Go ___ for two blocks.", ["to straight", "straight", "straightly", "the straight"], 1], ["It's ___ the left.", ["in", "at", "on", "to"], 2], ["___ the street carefully.", ["Cross", "Crossing", "Crossed", "To cross"], 0], ["It's ___ the bank and the café.", ["next", "opposite", "between", "near"], 2]], "fb": [["Turn ___ (left/on left) at the corner.", "left"], ["It's ___ (on/in) the right.", "on"], ["Go straight ___ (for/to) two blocks.", "for"], ["Is it ___ (far/long) from here?", "far"], ["The shop is ___ (next/near) to the bank.", "next"]], "hw": [["Give directions to your house in English.", "وصّفي الطريق لبيتك بالإنجليزي."], ["Use Google Maps in English for a day.", "استخدمي خرائط قوقل بالإنجليزي يوم كامل."], ["Learn 5 landmarks near your home in English.", "تعلمي ٥ معالم قريبة بالإنجليزي."], ["Practice: How do I get to... with a friend.", "تمرني مع صديقة: كيف أوصل..."], ["Draw a simple map and label it in English.", "ارسمي خريطة بسيطة وسمّيها بالإنجليزي."]]}, "5": {"t": "At the Restaurant", "ta": "في المطعم", "ic": "🍽️", "gr": "Would like / Could I", "gra": "التعبيرات المهذبة", "grd": "طرق مهذبة للطلب والسؤال", "grf": "I'd like... / Could I have... / Would you like...?", "grex": [["I'd like the steak, please.", "أبي الستيك."], ["Could I have some water?", "ممكن ماء؟"], ["Would you like a dessert?", "تبين حلى؟"], ["I'd like to pay, please.", "أبي أدفع."]], "cin": ["The restaurant is elegant. Candles on every table. A waiter approaches: 'Good evening! Do you have a reservation?' You nod confidently. Tonight, you order in English. No pointing at the menu. Real words. Real confidence.", "المطعم فاخر. شموع على كل طاولة. النادل يجي: 'مساء الخير! عندكم حجز؟' تومئين بثقة. الليلة تطلبين بالإنجليزي. بدون إشارات. ثقة حقيقية."], "v": [["reservation", "/ˌrezərˈveɪʃən/", "حجز", "I have a reservation.", "عندي حجز."], ["waiter", "/ˈweɪtər/", "نادل", "Excuse me, waiter!", "لو سمحت!"], ["appetizer", "/ˈæpɪtaɪzər/", "مقبلات", "What appetizers do you have?", "وش عندكم مقبلات؟"], ["main course", "/meɪn kɔːrs/", "طبق رئيسي", "For my main course...", "الطبق الرئيسي..."], ["dessert", "/dɪˈzɜːrt/", "حلى", "I'd like a dessert.", "أبي حلى."], ["bill", "/bɪl/", "حساب", "Can I have the bill?", "ممكن الحساب؟"], ["recommend", "/rekəˈmend/", "يوصي", "What do you recommend?", "وش توصون؟"], ["well-done", "/welˈdʌn/", "ناضج", "Steak well-done, please.", "ستيك ناضج."], ["spicy", "/ˈspaɪsi/", "حار", "Is it spicy?", "حار؟"], ["allergic", "/əˈlɜːrdʒɪk/", "حساسية", "I'm allergic to nuts.", "عندي حساسية مكسرات."], ["portion", "/ˈpɔːrʃən/", "حصة/كمية", "The portions are huge!", "الكميات كبيرة!"], ["delicious", "/dɪˈlɪʃəs/", "لذيذ", "This is delicious!", "لذيذ!"], ["starter", "/ˈstɑːrtər/", "مقبلات", "Any starters?", "مقبلات؟"], ["rare", "/rer/", "نيء شوي", "I like my steak rare.", "أبي الستيك نيء شوي."], ["side dish", "/saɪd dɪʃ/", "طبق جانبي", "What side dishes do you have?", "وش عندكم أطباق جانبية؟"]], "col": [["I want the steak", "I'd like the steak, please", "I'd like أمهذب بالمطاعم"], ["Bring me water", "Could I have some water?", "Could I have أمهذب"], ["The food is very delicious", "The food is delicious!", "delicious قوية — ما تحتاج very"], ["I have allergy from nuts", "I'm allergic to nuts", "allergic to مو allergy from"], ["Can you give me the menu?", "Could I see the menu?", "Could I see أمهذب"]], "ex": [["A table for two, please.", "طاولة لشخصين.", "F", "تدخلين المطعم"], ["What do you recommend?", "وش توصون؟", "F", "ما قررتِ"], ["I'd like the...", "أبي...", "F", "تطلبين"], ["Can I have the bill?", "ممكن الحساب؟", "F", "تبين تدفعين"], ["This is delicious!", "لذيذ!", "I", "عجبك الأكل"], ["I'm allergic to...", "عندي حساسية من...", "F", "عندك حساسية"], ["Could I have some water?", "ممكن ماء؟", "F", "تبين ماء"], ["This isn't what I ordered.", "هذا مو طلبي.", "F", "غلطوا بالطلب"]], "dl": [["wtr", "Good evening! Do you have a reservation?", "مساء الخير! عندكم حجز؟"], ["you", "Yes, under the name Lamar.", "إي، باسم لمار."], ["wtr", "Right this way. Here's your table.", "تفضلي."], ["wtr", "Are you ready to order?", "جاهزة تطلبين؟"], ["you", "What do you recommend?", "وش توصون؟"], ["wtr", "The grilled salmon is very popular.", "السلمون المشوي مشهور."], ["you", "I'd like that, please. And a salad as a starter.", "أبيه. وسلطة مقبلات."], ["wtr", "How would you like it cooked?", "كيف تبينه مطبوخ؟"], ["you", "Well-done, please.", "ناضج."], ["wtr", "Any drinks?", "مشروبات؟"], ["you", "Just water, please.", "بس ماء."], ["you", "Can I have the bill, please?", "ممكن الحساب؟"]], "kl": [["I want the steak.", "I'd like the steak, please.", "I'd like أمهذب بكثير بالمطاعم"], ["Bring me water.", "Could I have some water?", "Could I have أمهذب من bring me"], ["The food is very delicious.", "The food is delicious!", "delicious كلمة قوية ما تحتاج very"], ["I have allergy from nuts.", "I'm allergic to nuts.", "allergic to مو allergy from"]], "cu": ["آداب المطاعم", "البقشيش بأمريكا ١٥-٢٠٪ وهو أساسي مو اختياري! ببريطانيا ١٠-١٥٪. لا تنادين النادل بـ 'waiter!' — ارفعي يدك أو انتظري. و 'How would you like it cooked?' يعني درجة الاستواء."], "mc": [["I ___ like the grilled salmon.", ["would", "will", "am", "do"], 0], ["___ I have the bill?", ["Would", "Should", "Could", "Do"], 2], ["I'm ___ to peanuts.", ["allergic", "allergy", "allergen", "allergist"], 0], ["What do you ___?", ["recommend", "recommending", "recommended", "recommends"], 0]], "fb": [["I'd ___ (like/want) the steak.", "like"], ["___ (Could/Can) I have some water?", "Could"], ["I'm allergic ___ (to/from) nuts.", "to"], ["The food is ___ (delicious/very delicious).", "delicious"], ["A table ___ (for/of) two, please.", "for"]], "hw": [["Order food in English at a restaurant.", "اطلبي أكل بالإنجليزي بمطعم."], ["Learn 10 food items in English.", "تعلمي ١٠ أكلات بالإنجليزي."], ["Write what you'd order for dinner.", "اكتبي وش بتطلبين عشا."], ["Practice: I'm allergic to... sentences.", "تمرني: عندي حساسية من..."], ["Watch a restaurant scene in an English movie.", "شوفي مشهد مطعم بفلم إنجليزي."]]}, "6": {"t": "Meeting New People", "ta": "التعرف على أشخاص جدد", "ic": "👋", "gr": "Verb to Be", "gra": "فعل يكون (am/is/are)", "grd": "أهم فعل بالإنجليزي — يوصف الحالة والهوية", "grf": "I am / You are / He-She is / We-They are", "grex": [["I am from Saudi Arabia.", "أنا من السعودية."], ["She is a doctor.", "هي دكتورة."], ["We are students.", "نحن طالبات."], ["Are you new here?", "أنتِ جديدة هنا؟"]], "cin": ["A welcome party at the language school. Music plays softly. People chat in small groups. Someone walks up to you with a warm smile: 'Hi! I'm Sarah. Are you new here?' This is your moment.", "حفلة ترحيب بمعهد اللغة. موسيقى هادية. الناس يتكلمون. شخص يجيك بابتسامة: 'هاي! أنا سارة. أنتِ جديدة؟' هذي لحظتك."], "v": [["introduce", "/ˌɪntrəˈdjuːs/", "أقدم نفسي", "Let me introduce myself.", "خليني أقدم نفسي."], ["nationality", "/ˌnæʃəˈnæləti/", "جنسية", "What's your nationality?", "وش جنسيتك؟"], ["hometown", "/ˈhoʊmtaʊn/", "مدينة الأصل", "Where's your hometown?", "وين مدينتك؟"], ["hobby", "/ˈhɒbi/", "هواية", "What are your hobbies?", "وش هواياتك؟"], ["pleasure", "/ˈpleʒər/", "سعادة/تشرفت", "Nice to meet you! The pleasure is mine.", "تشرفت!"], ["friendly", "/ˈfrendli/", "ودود", "Everyone here is so friendly.", "الكل ودودين."], ["classmate", "/ˈklæsmeɪt/", "زميلة دراسة", "She's my classmate.", "زميلتي بالصف."], ["accent", "/ˈæksent/", "لهجة", "I love your accent!", "أحب لهجتك!"], ["fluent", "/ˈfluːənt/", "فصيحة/طليقة", "I want to be fluent.", "أبي أكون طليقة."], ["shy", "/ʃaɪ/", "خجولة", "I'm a bit shy.", "أنا شوي خجولة."], ["outgoing", "/ˈaʊtɡoʊɪŋ/", "اجتماعية", "She's very outgoing.", "هي اجتماعية."], ["single", "/ˈsɪŋɡl/", "عزباء", "Are you married or single?", "متزوجة ولا عزباء؟"], ["married", "/ˈmærid/", "متزوجة", "I'm married with two kids.", "متزوجة وعندي طفلين."], ["engineer", "/ˌendʒɪˈnɪr/", "مهندسة", "I'm an engineer.", "أنا مهندسة."], ["experience", "/ɪkˈspɪriəns/", "تجربة", "It's a great experience.", "تجربة رائعة."]], "col": [["My name called Lamar", "My name is Lamar", "اسمي = My name is"], ["I am come from Saudi", "I come from Saudi Arabia", "come بدون am"], ["Nice to meeting you", "Nice to meet you", "meet بدون ing"], ["What is your work?", "What do you do?", "What do you do أطبع للسؤال عن المهنة"], ["I have 25 years", "I'm 25 years old", "العمر بالإنجليزي: I'm + رقم + years old"]], "ex": [["Hi, I'm Lamar. Nice to meet you!", "هاي، أنا لمار. تشرفت!", "F", "أول لقاء"], ["Where are you from?", "من وين أنتِ؟", "F", "تسألين عن البلد"], ["What do you do?", "وش شغلك؟", "F", "تسألين عن المهنة"], ["How long have you been here?", "من متى هنا؟", "F", "تسألين عن المدة"], ["It's nice to meet you too!", "تشرفت كمان!", "F", "ترديّن التحية"], ["What do you do for fun?", "وش تسوين للترفيه؟", "I", "تسألين عن الهوايات"], ["Let's stay in touch!", "نكون على تواصل!", "I", "تبين تبقون أصحاب"], ["See you around!", "أشوفك!", "I", "وداع خفيف"]], "dl": [["sar", "Hi! I'm Sarah. Are you new here?", "هاي! أنا سارة. أنتِ جديدة؟"], ["you", "Hi Sarah! Yes, I just arrived. I'm Lamar.", "هاي سارة! إي، توني واصلة. أنا لمار."], ["sar", "Nice to meet you, Lamar! Where are you from?", "تشرفت! من وين أنتِ؟"], ["you", "I'm from Saudi Arabia. Jeddah.", "من السعودية. جدة."], ["sar", "Oh wow! What do you do?", "واو! وش شغلك؟"], ["you", "I'm an engineer. What about you?", "مهندسة. وأنتِ؟"], ["sar", "I'm a teacher. How long are you staying?", "معلمة. كم بتقعدين؟"], ["you", "About six months. I want to improve my English.", "حوالي ٦ شهور. أبي أحسن إنجليزيتي."], ["sar", "Your English is already great! Let's have coffee later.", "إنجليزيتك حلوة! نشرب قهوة بعدين؟"], ["you", "I'd love that! See you later!", "أحب! أشوفك!"]], "kl": [["My name called Lamar.", "My name is Lamar.", "نقول My name is — مو called"], ["I am come from Saudi.", "I come from Saudi Arabia.", "come فعل — ما يحتاج am"], ["I have 25 years.", "I'm 25 years old.", "العمر: I'm + رقم + years old"], ["Nice to meeting you.", "Nice to meet you.", "بعد Nice to الفعل بدون ing"]], "cu": ["Small Talk", "بالغرب، 'How are you?' تحية مو سؤال حقيقي — جاوبي 'Good, thanks!' فقط. ولا تسألين عن الراتب أو العمر أول ما تتعرفين. 'What do you do?' عن الشغل. والابتسامة والتواصل البصري مهمين جداً."], "mc": [["I ___ from Saudi Arabia.", ["is", "am", "are", "be"], 1], ["She ___ a doctor.", ["am", "are", "is", "be"], 2], ["___ you married?", ["Is", "Am", "Are", "Do"], 2], ["Nice to ___ you!", ["meeting", "meet", "met", "meets"], 1]], "fb": [["I ___ (am/is) an engineer.", "am"], ["She ___ (is/are) very friendly.", "is"], ["Where ___ (is/are) you from?", "are"], ["My name ___ (is/called) Lamar.", "is"], ["I'm 25 years ___ (old/age).", "old"]], "hw": [["Introduce yourself in English to someone new.", "قدمي نفسك بالإنجليزي لشخص جديد."], ["Write 5 sentences about yourself.", "اكتبي ٥ جمل عن نفسك."], ["Practice: Where are you from? What do you do?", "تمرني على الأسئلة الأساسية."], ["Learn how to say your job in English.", "تعلمي اسم مهنتك بالإنجليزي."], ["Watch a 'meeting people' video in English.", "شوفي فيديو تعارف بالإنجليزي."]]}, "7": {"t": "Phone Calls & Texting", "ta": "المكالمات والرسائل", "ic": "📱", "gr": "Present Continuous", "gra": "المضارع المستمر", "grd": "للأشياء اللي تصير الحين أو حول الحين", "grf": "Subject + am/is/are + verb-ing", "grex": [["I'm calling you now.", "أتصل فيك الحين."], ["She's texting her friend.", "ترسل رسالة لصديقتها."], ["We're having a meeting.", "عندنا اجتماع."], ["Are you listening?", "تسمعين؟"]], "cin": ["Your phone rings. An unknown British number. You answer nervously: 'Hello?' A voice says: 'Hi, is this Lamar? I'm calling about your apartment viewing.' Your first phone call in English. Deep breath. You can do this.", "جوالك يرن. رقم بريطاني ما تعرفينه. تردين بتوتر: 'ألو؟' صوت يقول: 'هاي، لمار؟ أتصل بخصوص معاينة الشقة.' أول مكالمة إنجليزية. نفس عميق. تقدرين."], "v": [["ring", "/rɪŋ/", "يرن", "My phone is ringing.", "جوالي يرن."], ["answer", "/ˈænsər/", "ترد", "Can you answer the phone?", "ردي على الجوال."], ["hang up", "/hæŋ ʌp/", "تسكرين", "Don't hang up!", "لا تسكرين!"], ["hold on", "/hoʊld ɒn/", "استني", "Hold on a moment.", "لحظة."], ["voicemail", "/ˈvɔɪsmeɪl/", "بريد صوتي", "Leave a voicemail.", "خلي رسالة صوتية."], ["text", "/tekst/", "رسالة نصية", "I'll text you later.", "بأرسل لك رسالة."], ["signal", "/ˈsɪɡnəl/", "إشارة/شبكة", "I have no signal.", "ما عندي شبكة."], ["battery", "/ˈbætəri/", "بطارية", "My battery is dying.", "بطاريتي بتخلص."], ["charger", "/ˈtʃɑːrdʒər/", "شاحن", "Where's my charger?", "وين شاحني؟"], ["dial", "/ˈdaɪəl/", "تتصلين", "Dial this number.", "اتصلي على هالرقم."], ["busy", "/ˈbɪzi/", "مشغول", "The line is busy.", "الخط مشغول."], ["message", "/ˈmesɪdʒ/", "رسالة", "Can I leave a message?", "أقدر أخلي رسالة؟"], ["callback", "/ˈkɔːlbæk/", "يتصل مرة ثانية", "I'll call you back.", "بأتصل فيك."], ["speaker", "/ˈspiːkər/", "سماعة", "Put it on speaker.", "حطيه سبيكر."], ["screenshot", "/ˈskriːnʃɒt/", "لقطة شاشة", "I'll send you a screenshot.", "بأرسل لك سكرين شوت."]], "col": [["I will call to you", "I'll call you", "call بدون to"], ["Close the phone", "Hang up the phone", "hang up = تسكرين"], ["Open the phone", "Answer the phone", "answer = تردين"], ["Send me message", "Send me a message", "message تحتاج a"], ["My phone is died", "My phone is dead", "dead صفة مو died"]], "ex": [["Hello, this is Lamar speaking.", "ألو، أنا لمار.", "F", "ترديّن على المكالمة"], ["Can I speak to...?", "ممكن أكلم...؟", "F", "تطلبين شخص"], ["Hold on a moment.", "لحظة.", "F", "تطلبين وقت"], ["I'll call you back.", "بأتصل فيك.", "I", "مشغولة الحين"], ["Sorry, wrong number.", "آسفة، رقم غلط.", "F", "اتصلوا غلط"], ["Can you hear me?", "تسمعيني؟", "I", "مشاكل بالاتصال"], ["I'll text you the details.", "بأرسل لك التفاصيل.", "I", "ترسلين معلومات"], ["My phone is about to die.", "جوالي بيطفي.", "I", "البطارية خلصت"]], "dl": [["you", "Hello?", "ألو؟"], ["cal", "Hi, is this Lamar?", "هاي، لمار؟"], ["you", "Yes, this is Lamar speaking.", "إي، أنا لمار."], ["cal", "I'm calling about the apartment viewing.", "أتصل بخصوص معاينة الشقة."], ["you", "Oh yes! When is it?", "أوه إي! متى؟"], ["cal", "Tomorrow at 3 PM. Does that work?", "بكرة الساعة ٣. يناسبك؟"], ["you", "Hold on, let me check... Yes, that works!", "لحظة، خليني أشيك... إي، يناسبني!"], ["cal", "Great! I'm sending you the address now.", "حلو! بأرسل لك العنوان."], ["you", "Perfect. I'll text you if I get lost.", "تمام. بأرسل لك لو ضعت."], ["cal", "Sounds good! See you tomorrow.", "تمام! أشوفك بكرة."]], "kl": [["I will call to you.", "I'll call you.", "call بدون to قبل الشخص"], ["Close the phone.", "Hang up the phone.", "hang up = سكري — مو close"], ["My phone is died.", "My phone is dead.", "dead صفة — died فعل ماضي"], ["Send me message.", "Send me a message.", "message تحتاج a قبلها"]], "cu": ["ثقافة المكالمات", "بالغرب ما يتصلون بدون موعد — الرسالة النصية أفضل. لو اتصلتِ وما أحد رد، خلي voicemail. لا تتصلين مرتين ورا بعض. و 'I'll let you go' طريقة مهذبة تنهين المكالمة."], "mc": [["She ___ texting right now.", ["is", "are", "am", "do"], 0], ["I'm ___ you about the meeting.", ["call", "calling", "called", "calls"], 1], ["My phone is ___ !", ["die", "died", "dead", "dying"], 2], ["Can I ___ a message?", ["leave", "leaving", "left", "lives"], 0]], "fb": [["I ___ (am calling/call) you right now.", "am calling"], ["She ___ (is/are) texting her friend.", "is"], ["Hold ___ (on/in) a moment.", "on"], ["I'll call you ___ (back/again).", "back"], ["My battery is ___ (dying/dead).", "dying"]], "hw": [["Call a friend and practice in English for 2 minutes.", "اتصلي بصديقة وتكلمي إنجليزي دقيقتين."], ["Send 3 text messages in English today.", "أرسلي ٣ رسائل إنجليزية اليوم."], ["Record a voicemail greeting in English.", "سجلي رسالة بريد صوتي بالإنجليزي."], ["Learn phone vocabulary: ring, dial, hang up.", "تعلمي مفردات الجوال."], ["Practice: Hello, this is Lamar speaking.", "تمرني: ألو، أنا لمار."]]}, "8": {"t": "At the Pharmacy", "ta": "في الصيدلية", "ic": "💊", "gr": "Present Continuous — Negatives & Questions", "gra": "المضارع المستمر — النفي والأسئلة", "grd": "كيف ننفي ونسأل بالمضارع المستمر", "grf": "I'm not + verb-ing / Is she + verb-ing?", "grex": [["I'm not feeling well.", "ما أحس إني زينة."], ["Is he taking medicine?", "ياخذ دوا؟"], ["She isn't sleeping well.", "ما تنام زين."], ["Are you feeling better?", "أحسن الحين؟"]], "cin": ["Your head is pounding. Your throat is sore. You walk into a pharmacy with bright white shelves. The pharmacist looks at you kindly: 'How can I help you today?' You need to explain what's wrong — in English.", "راسك يدق. حلقك يعورك. تدخلين صيدلية برفوف بيضا. الصيدلانية تطالعك: 'كيف أساعدك؟' لازم توصفين وش فيك — بالإنجليزي."], "v": [["headache", "/ˈhedeɪk/", "صداع", "I have a terrible headache.", "عندي صداع قوي."], ["cough", "/kɒf/", "كحة", "I can't stop coughing.", "ما أقدر أوقف الكحة."], ["fever", "/ˈfiːvər/", "حرارة", "I think I have a fever.", "أحس عندي حرارة."], ["sore throat", "/sɔːr θroʊt/", "التهاب حلق", "My throat is really sore.", "حلقي ملتهب."], ["medicine", "/ˈmedɪsɪn/", "دوا", "What medicine do you recommend?", "وش دوا توصون فيه؟"], ["painkiller", "/ˈpeɪnkɪlər/", "مسكن", "I need a painkiller.", "أحتاج مسكن."], ["prescription", "/prɪˈskrɪpʃən/", "وصفة طبية", "Do I need a prescription?", "أحتاج وصفة؟"], ["allergy", "/ˈælərdʒi/", "حساسية", "I have allergies.", "عندي حساسية."], ["dizzy", "/ˈdɪzi/", "دايخة", "I feel dizzy.", "حاسة بدوخة."], ["pharmacy", "/ˈfɑːrməsi/", "صيدلية", "Where's the nearest pharmacy?", "وين أقرب صيدلية؟"], ["dose", "/doʊs/", "جرعة", "What's the dose?", "كم الجرعة؟"], ["tablet", "/ˈtæblɪt/", "حبة دوا", "Take two tablets.", "خذي حبتين."], ["side effects", "/saɪd ɪˈfekts/", "أعراض جانبية", "Any side effects?", "في أعراض جانبية؟"], ["runny nose", "/ˈrʌni noʊz/", "رشح", "I have a runny nose.", "عندي رشح."], ["bandage", "/ˈbændɪdʒ/", "ضماد", "I need a bandage.", "أحتاج ضماد."]], "col": [["I am sick from cold", "I have a cold", "have a cold مو sick from"], ["My head is hurting me", "I have a headache", "have a headache"], ["I eat medicine", "I take medicine", "take medicine مو eat"], ["I am having allergy", "I have an allergy", "have بدون am"], ["The doctor said me", "The doctor told me", "told me مو said me"]], "ex": [["I'm not feeling well.", "ما أحس إني زينة.", "F", "تحسين بتعب"], ["I have a headache.", "عندي صداع.", "F", "توصفين الألم"], ["Can I get something for...?", "ممكن شي لـ...؟", "F", "تطلبين دوا"], ["Do I need a prescription?", "أحتاج وصفة؟", "F", "تسألين عن الوصفة"], ["How often should I take this?", "كل كم آخذه؟", "F", "تسألين عن الجرعة"], ["I'm allergic to penicillin.", "عندي حساسية من البنسلين.", "F", "عندك حساسية دوا"], ["Is there anything stronger?", "في شي أقوى؟", "I", "الدوا ما نفع"], ["I feel much better now.", "أحس أحسن الحين.", "I", "تحسنتِ"]], "dl": [["phm", "Good morning! How can I help you?", "صباح الخير! كيف أساعدك؟"], ["you", "I'm not feeling well. I have a headache and a sore throat.", "ما أحس إني زينة. عندي صداع والتهاب حلق."], ["phm", "How long have you been feeling like this?", "من متى كذا؟"], ["you", "Since yesterday morning.", "من أمس الصبح."], ["phm", "Do you have a fever?", "عندك حرارة؟"], ["you", "I'm not sure. I feel a bit hot.", "مو متأكدة. حاسة بحر."], ["phm", "I recommend these tablets. Take two every 6 hours.", "أنصحك بهالحبوب. حبتين كل ٦ ساعات."], ["you", "Do I need a prescription?", "أحتاج وصفة؟"], ["phm", "No, these are over the counter.", "لا، بدون وصفة."], ["you", "Are there any side effects?", "في أعراض جانبية؟"], ["phm", "You might feel a little sleepy.", "ممكن تحسين بنعاس شوي."], ["you", "Thank you so much!", "شكراً جزيلاً!"]], "kl": [["I eat medicine.", "I take medicine.", "take medicine مو eat"], ["My head is paining.", "I have a headache.", "have a headache أطبع"], ["I am having allergy.", "I have an allergy.", "have بدون am + an قبل allergy"], ["The doctor said me to rest.", "The doctor told me to rest.", "told me مو said me"]], "cu": ["ثقافة الصيدليات", "ببريطانيا بعض الأدوية تحتاج وصفة (prescription) وبعضها بدون (over the counter). الصيدلاني يقدر يعطيك نصيحة طبية بسيطة. NHS هو النظام الصحي المجاني — لكن الانتظار طويل!"], "mc": [["I'm ___ feeling well.", ["no", "not", "don't", "doesn't"], 1], ["She ___ taking medicine right now.", ["is", "are", "am", "do"], 0], ["___ you feeling better?", ["Is", "Am", "Are", "Do"], 2], ["I have a terrible ___.", ["head", "headache", "head pain", "heads"], 1]], "fb": [["I ___ (take/eat) medicine twice a day.", "take"], ["She's ___ (not feeling/don't feel) well.", "not feeling"], ["I have ___ (a/the) cold.", "a"], ["How ___ (often/much) should I take this?", "often"], ["Are there any side ___ (effects/affects)?", "effects"]], "hw": [["Learn 5 body parts in English.", "تعلمي ٥ أجزاء جسم بالإنجليزي."], ["Practice describing symptoms in English.", "تمرني توصفين الأعراض."], ["Write: What to say at a pharmacy.", "اكتبي وش تقولين بالصيدلية."], ["Learn the difference: headache, stomachache, toothache.", "تعلمي الفرق بين أنواع الألم."], ["Watch a pharmacy dialogue in English.", "شوفي حوار صيدلية بالإنجليزي."]]}, "9": {"t": "Taking a Taxi / Uber", "ta": "ركوب التاكسي", "ic": "🚕", "gr": "Present Simple vs Present Continuous", "gra": "الفرق بين المضارع البسيط والمستمر", "grd": "البسيط = عادات / المستمر = الحين", "grf": "I drive every day (habit) vs I'm driving now (now)", "grex": [["I take a taxi every morning.", "آخذ تاكسي كل صباح. (عادة)"], ["I'm taking a taxi right now.", "آخذ تاكسي الحين. (الآن)"], ["He usually drives fast.", "عادةً يسوق بسرعة."], ["He's driving too fast!", "يسوق بسرعة زيادة!"]], "cin": ["It's raining in London. You open the Uber app and order a ride. A black car pulls up. The driver waves. You jump in: 'Hi! I'm going to Baker Street.' The meter starts. Your London adventure continues.", "تمطر بلندن. تفتحين أوبر وتطلبين. سيارة سوداء توقف. السواق يلوّح. تركبين: 'هاي! رايحة بيكر ستريت.' العداد يبدأ. مغامرتك تستمر."], "v": [["destination", "/ˌdestɪˈneɪʃən/", "وجهة", "What's your destination?", "وش وجهتك؟"], ["meter", "/ˈmiːtər/", "عداد", "Is the meter running?", "العداد شغال؟"], ["fare", "/fer/", "أجرة", "How much is the fare?", "كم الأجرة؟"], ["drop off", "/drɑːp ɒf/", "توصلين", "Drop me off here.", "وقفي هنا."], ["pick up", "/pɪk ʌp/", "تاخذين", "Pick me up at 5.", "خذيني الساعة ٥."], ["route", "/ruːt/", "مسار", "What route are you taking?", "أي طريق بتاخذ؟"], ["traffic", "/ˈtræfɪk/", "زحمة", "There's a lot of traffic.", "في زحمة."], ["shortcut", "/ˈʃɔːrtkʌt/", "اختصار", "Is there a shortcut?", "في طريق مختصر؟"], ["seat belt", "/siːt belt/", "حزام أمان", "Please put on your seat belt.", "البسي الحزام."], ["trunk", "/trʌŋk/", "صندوق السيارة", "Can you open the trunk?", "تفتح الصندوق؟"], ["GPS", "/dʒiː piː es/", "جي بي إس", "Follow the GPS.", "تابع الجي بي إس."], ["ride", "/raɪd/", "رحلة/ركوب", "I need a ride.", "أحتاج توصيلة."], ["corner", "/ˈkɔːrnər/", "زاوية", "Stop at the corner.", "وقف عند الزاوية."], ["highway", "/ˈhaɪweɪ/", "طريق سريع", "Take the highway.", "خذ الطريق السريع."], ["flat rate", "/flæt reɪt/", "سعر ثابت", "Is it a flat rate?", "السعر ثابت؟"]], "col": [["I go by taxi", "I take a taxi", "take a taxi مو go by"], ["Open the taxi", "Get in the taxi", "get in = تركبين"], ["The traffic is many", "There's a lot of traffic", "a lot of traffic"], ["I want to go to here", "I want to go here", "here بدون to"], ["How many time it takes?", "How long does it take?", "How long للمدة"]], "ex": [["Can you take me to...?", "توصلني...؟", "F", "تعطين العنوان"], ["How long will it take?", "كم بتاخذ؟", "F", "تسألين عن الوقت"], ["Can you go faster, please?", "ممكن أسرع؟", "I", "متأخرة"], ["Drop me off here, please.", "وقفي هنا.", "F", "توصلتِ"], ["Keep the change.", "خلي الباقي.", "I", "بقشيش"], ["Is this the right way?", "هذا الطريق الصحيح؟", "F", "مشكوكة"], ["Can you turn on the AC?", "ممكن تشغل المكيف؟", "I", "حر"], ["I'm in a hurry.", "مستعجلة.", "I", "ضيق وقت"]], "dl": [["drv", "Hello! Where to?", "أهلاً! لوين؟"], ["you", "Hi! Baker Street, please.", "هاي! بيكر ستريت."], ["drv", "Sure. The GPS is showing some traffic.", "أكيد. في زحمة بالطريق."], ["you", "How long will it take?", "كم بتاخذ؟"], ["drv", "About 20 minutes with traffic.", "حوالي ٢٠ دقيقة بالزحمة."], ["you", "Is there a shortcut?", "في طريق مختصر؟"], ["drv", "I can take the highway. It might be faster.", "أقدر آخذ السريع. ممكن أسرع."], ["you", "Yes, please! I'm in a hurry.", "إي! مستعجلة."], ["drv", "Here we are. Baker Street.", "وصلنا. بيكر ستريت."], ["you", "How much is the fare?", "كم الأجرة؟"], ["drv", "12 pounds 50.", "١٢ باوند ونص."], ["you", "Here you go. Keep the change!", "تفضل. خلي الباقي!"]], "kl": [["How many time it takes?", "How long does it take?", "How long للمدة مو How many time"], ["I go by taxi.", "I take a taxi.", "take a taxi أطبع"], ["The traffic is many.", "There's a lot of traffic.", "a lot of traffic للزحمة"], ["Stop in here.", "Stop here.", "here بدون in"]], "cu": ["ثقافة التاكسي", "بلندن 'black cabs' التاكسيات الرسمية غالية بس موثوقة. أوبر أرخص. البقشيش ١٠٪ طبيعي. السواق ممكن يسولف — هذي فرصتك تتمرنين! و 'Where to?' اختصار لـ 'Where would you like to go?'"], "mc": [["I ___ a taxi every morning.", ["take", "taking", "am take", "takes"], 0], ["She ___ a taxi right now.", ["takes", "is taking", "take", "taking"], 1], ["How ___ does it take?", ["much", "many", "long", "far"], 2], ["Can you drop me ___ here?", ["on", "in", "at", "off"], 3]], "fb": [["I ___ (take/taking) a taxi every day.", "take"], ["She ___ (is taking/takes) a taxi now.", "is taking"], ["How ___ (long/much) does it take?", "long"], ["Drop me ___ (off/out) here.", "off"], ["There's a lot of ___ (traffic/traffics).", "traffic"]], "hw": [["Take a taxi and practice in English.", "اركبي تاكسي وتكلمي إنجليزي."], ["Learn directions: left, right, straight.", "تعلمي الاتجاهات."], ["Write a dialogue: you and a taxi driver.", "اكتبي حوار مع سواق."], ["Practice: How long does it take to...?", "تمرني: كم ياخذ الطريق لـ...؟"], ["Use Uber in English mode for a week.", "حولي أوبر لإنجليزي أسبوع."]]}, "10": {"t": "At the Bank", "ta": "في البنك", "ic": "🏦", "gr": "Countable & Uncountable Nouns", "gra": "الأسماء المعدودة وغير المعدودة", "grd": "بعض الأشياء نقدر نعدها وبعضها لا", "grf": "Countable: a coin, two coins / Uncountable: money, cash (no plural)", "grex": [["I have two accounts.", "عندي حسابين. (معدود)"], ["I need some money.", "أحتاج فلوس. (غير معدود)"], ["How many cards do you have?", "كم بطاقة عندك؟ (معدود)"], ["How much cash do you need?", "كم كاش تحتاجين؟ (غير معدود)"]], "cin": ["The bank is quiet. Marble floors. A security guard nods as you walk in. You take a number: 47. You rehearse in your head: 'I'd like to open an account.' The screen shows: Now serving number 47. It's your turn.", "البنك هادي. أرضيات رخام. الحارس يومئ. تاخذين رقم: ٤٧. تتمرنين بعقلك: 'أبي أفتح حساب.' الشاشة تقول: الآن رقم ٤٧. دورك."], "v": [["account", "/əˈkaʊnt/", "حساب بنكي", "I'd like to open an account.", "أبي أفتح حساب."], ["balance", "/ˈbæləns/", "رصيد", "What's my balance?", "كم رصيدي؟"], ["withdraw", "/wɪðˈdrɔː/", "أسحب", "I want to withdraw 200 pounds.", "أبي أسحب ٢٠٠ باوند."], ["deposit", "/dɪˈpɑːzɪt/", "أودع", "I'd like to deposit this check.", "أبي أودع هالشيك."], ["transfer", "/ˈtrænsfɜːr/", "أحول", "I need to transfer money.", "أحتاج أحول فلوس."], ["exchange rate", "/ɪksˈtʃeɪndʒ reɪt/", "سعر الصرف", "What's the exchange rate?", "كم سعر الصرف؟"], ["PIN", "/pɪn/", "رقم سري", "Enter your PIN.", "ادخلي رقمك السري."], ["ATM", "/eɪ tiː em/", "صراف آلي", "Where's the nearest ATM?", "وين أقرب صراف؟"], ["loan", "/loʊn/", "قرض", "I'd like to apply for a loan.", "أبي أقدم على قرض."], ["savings", "/ˈseɪvɪŋz/", "مدخرات", "I have a savings account.", "عندي حساب ادخار."], ["statement", "/ˈsteɪtmənt/", "كشف حساب", "Can I get a bank statement?", "ممكن كشف حساب؟"], ["currency", "/ˈkɜːrənsi/", "عملة", "What currency do you accept?", "أي عملة تقبلون؟"], ["cash", "/kæʃ/", "كاش/نقد", "I'd like to pay in cash.", "أبي أدفع كاش."], ["credit card", "/ˈkredɪt kɑːrd/", "بطاقة ائتمان", "Do you accept credit cards?", "تقبلون بطاقات ائتمان؟"], ["interest", "/ˈɪntrəst/", "فائدة", "What's the interest rate?", "كم نسبة الفائدة؟"]], "col": [["I want to open a count", "I'd like to open an account", "account مو count + an قبلها"], ["I want to pull money", "I want to withdraw money", "withdraw = سحب مو pull"], ["How many money?", "How much money?", "money غير معدود = How much"], ["I do a transfer", "I make a transfer", "make a transfer مو do"], ["What is the change rate?", "What is the exchange rate?", "exchange rate مو change rate"]], "ex": [["I'd like to open an account.", "أبي أفتح حساب.", "F", "فتح حساب"], ["What's my current balance?", "كم رصيدي الحالي؟", "F", "تسألين عن الرصيد"], ["I need to withdraw some cash.", "أحتاج أسحب كاش.", "F", "سحب فلوس"], ["What's the exchange rate today?", "كم سعر الصرف اليوم؟", "F", "تحويل عملة"], ["Can I get a bank statement?", "ممكن كشف حساب؟", "F", "تطلبين كشف"], ["I'd like to transfer money.", "أبي أحول فلوس.", "F", "تحويل"], ["Where's the nearest ATM?", "وين أقرب صراف؟", "I", "تدورين صراف"], ["I forgot my PIN.", "نسيت رقمي السري.", "I", "نسيتِ الرقم"]], "dl": [["bnk", "Good morning! How can I help you?", "صباح الخير! كيف أساعدك؟"], ["you", "I'd like to open a bank account.", "أبي أفتح حساب."], ["bnk", "Sure! Do you want a savings or checking account?", "أكيد! ادخار ولا جاري؟"], ["you", "A savings account, please.", "ادخار."], ["bnk", "I'll need your passport and a proof of address.", "أحتاج جوازك وإثبات عنوان."], ["you", "Here you go. What's the interest rate?", "تفضلي. كم نسبة الفائدة؟"], ["bnk", "It's 2.5% for savings. You'll also get a debit card.", "٢.٥٪ للادخار. وبتحصلين بطاقة."], ["you", "How long does it take to get the card?", "كم ياخذ وصول البطاقة؟"], ["bnk", "About 5-7 business days.", "حوالي ٥-٧ أيام عمل."], ["you", "Perfect. Can I also check the exchange rate for Saudi Riyals?", "تمام. وكم سعر صرف الريال؟"], ["bnk", "Let me check... 1 pound equals about 4.7 riyals today.", "خليني أشيك... الباوند = ٤.٧ ريال تقريباً."], ["you", "Thank you so much for your help!", "شكراً جزيلاً!"]], "kl": [["How many money do I have?", "How much money do I have?", "money غير معدود = How much"], ["I want to open a count.", "I'd like to open an account.", "account مو count"], ["I want to pull money.", "I want to withdraw money.", "withdraw مو pull"], ["What is the change rate?", "What is the exchange rate?", "exchange rate مو change"]], "cu": ["ثقافة البنوك", "ببريطانيا تحتاجين proof of address (إثبات عنوان) لفتح حساب — فاتورة كهرباء أو عقد إيجار. البنوك تسكر بدري (٤-٥ عصراً). ATM = cash machine ببريطانيا. ولا تنسين: PIN code لازم ٤ أرقام وسري!"], "mc": [["How ___ money do you need?", ["many", "much", "long", "often"], 1], ["I'd like to ___ an account.", ["open", "make", "do", "have"], 0], ["She has two bank ___.", ["account", "accounts", "accounting", "count"], 1], ["I need to ___ some cash.", ["pull", "take", "withdraw", "remove"], 2]], "fb": [["I'd like to ___ (open/close) a new account.", "open"], ["How ___ (much/many) cash do you need?", "much"], ["I want to ___ (withdraw/pull) 100 pounds.", "withdraw"], ["What's the exchange ___ (rate/price)?", "rate"], ["Enter your ___ (PIN/PEN) number.", "PIN"]], "hw": [["Learn 5 banking terms in English.", "تعلمي ٥ مصطلحات بنكية."], ["Practice: I'd like to withdraw/deposit/transfer.", "تمرني: أبي أسحب/أودع/أحول."], ["Check your bank app in English.", "شيكي تطبيق البنك بالإنجليزي."], ["Write what you'd say to open an account.", "اكتبي وش بتقولين لفتح حساب."], ["Learn currencies: pound, dollar, euro, riyal.", "تعلمي أسماء العملات."]]}, "11": {"t": "Visiting a Friend", "ta": "زيارة صديقة", "ic": "🏠", "gr": "Past Simple — Regular Verbs", "gra": "الماضي البسيط — الأفعال المنتظمة", "grd": "للأشياء اللي صارت وخلصت بالماضي", "grf": "Subject + verb+ed (walked, visited, cooked)", "grex": [["I visited my friend yesterday.", "زرت صديقتي أمس."], ["She cooked dinner for us.", "طبخت لنا عشا."], ["We talked for hours.", "تكلمنا ساعات."], ["I didn't stay long.", "ما طوّلت."]], "cin": ["Sarah texted you: 'Come over for dinner tonight!' You grab a box of chocolates and head to her flat. She opens the door with a big smile: 'Come in! Make yourself at home!'", "سارة رسلت لك: 'تعالي تعشي عندي!' تمسكين علبة شوكولاته وتروحين شقتها. تفتح الباب بابتسامة: 'ادخلي! حسّي نفسك ببيتك!'"], "v": [["visit", "/ˈvɪzɪt/", "زيارة", "I visited Sarah last night.", "زرت سارة أمس."], ["invite", "/ɪnˈvaɪt/", "أدعو", "She invited me for dinner.", "عزمتني على عشا."], ["host", "/hoʊst/", "مضيف/ة", "She's a great host.", "مضيفة ممتازة."], ["guest", "/ɡest/", "ضيف/ة", "I was her guest.", "كنت ضيفتها."], ["doorbell", "/ˈdɔːrbel/", "جرس الباب", "I rang the doorbell.", "ضغطت الجرس."], ["living room", "/ˈlɪvɪŋ ruːm/", "صالة", "The living room is cozy.", "الصالة مريحة."], ["cozy", "/ˈkoʊzi/", "دافئ/مريح", "Your flat is so cozy!", "شقتك مريحة!"], ["homemade", "/ˌhoʊmˈmeɪd/", "بيتي/منزلي", "She made homemade pasta.", "سوت باستا بيتي."], ["dish", "/dɪʃ/", "طبق", "This dish is amazing!", "الطبق خرافي!"], ["dessert", "/dɪˈzɜːrt/", "حلى", "We had chocolate cake for dessert.", "أكلنا كيك شوكولاته حلى."], ["gift", "/ɡɪft/", "هدية", "I brought a small gift.", "جبت هدية صغيرة."], ["comfortable", "/ˈkʌmftəbl/", "مرتاحة", "Make yourself comfortable.", "ارتاحي."], ["chat", "/tʃæt/", "سالفة/سوالف", "We chatted for hours.", "سولفنا ساعات."], ["sofa", "/ˈsoʊfə/", "كنبة", "Sit on the sofa.", "اقعدي على الكنبة."], ["neighbor", "/ˈneɪbər/", "جارة", "She's also my neighbor.", "هي كمان جارتي."]], "col": [["I passed to her house", "I went to her house", "went to مو passed to"], ["She did a cake", "She made a cake", "make a cake مو do"], ["I carried a gift", "I brought a gift", "brought مو carried"], ["We talked about many topics", "We chatted about many things", "chatted أطبع"], ["Can I have seat?", "Can I sit down?", "sit down مو have seat"]], "ex": [["Come in! Make yourself at home!", "ادخلي! حسّي نفسك ببيتك!", "I", "ترحبين بضيفة"], ["I brought you something.", "جبت لك شي.", "I", "عندك هدية"], ["Your place is lovely!", "مكانك حلو!", "I", "تمدحين البيت"], ["Thanks for having me!", "شكراً على الاستضافة!", "F", "تشكرين المضيفة"], ["Can I help with anything?", "أساعد بشي؟", "F", "تعرضين مساعدة"], ["I had a wonderful time.", "وقت رائع!", "F", "قبل ما تطلعين"], ["Let's do this again soon!", "نعيدها قريب!", "I", "تبين تتكرر"], ["I should get going.", "لازم أمشي.", "I", "تبين تطلعين"]], "dl": [["sar", "Lamar! Come in!", "لمار! ادخلي!"], ["you", "Hi Sarah! I brought you some chocolates.", "هاي سارة! جبت لك شوكولاته."], ["sar", "Oh, you didn't have to! That's so sweet!", "ما كان لازم! حبيبة!"], ["you", "Your flat is so cozy! I love it.", "شقتك مريحة! عجبتني."], ["sar", "Thanks! Sit down. Dinner is almost ready.", "شكراً! اقعدي. العشا قرب يخلص."], ["you", "It smells amazing! What did you cook?", "ريحته خيال! وش طبختِ؟"], ["sar", "I made homemade pasta with garlic bread.", "سويت باستا بيتي مع خبز بالثوم."], ["you", "Can I help with anything?", "أساعد بشي؟"], ["sar", "No, just relax! Make yourself at home.", "لا، ارتاحي!"], ["you", "This is delicious, Sarah! You're an amazing cook!", "لذيذ يا سارة! طباختة!"], ["sar", "Thank you! There's chocolate cake for dessert.", "شكراً! وفي كيك شوكولاته حلى."], ["you", "I had a wonderful time. Thanks for having me!", "وقت رائع. شكراً على الاستضافة!"]], "kl": [["She did a cake.", "She made a cake.", "make = صنع/طبخ، do = فعل"], ["I carried a gift.", "I brought a gift.", "brought (ماضي bring) مو carried"], ["Thanks to have me.", "Thanks for having me.", "Thanks for + verb-ing"], ["I passed by her house.", "I stopped by her house.", "stopped by = مريت عليها"]], "cu": ["ثقافة الزيارات", "بالغرب لازم موعد قبل الزيارة — ما تروحين فجأة! جيبي هدية بسيطة (شوكولاته، زهور، نبيذ). اخلعي حذاءك إذا شفتِ أحذيتهم عند الباب. و 'Make yourself at home' يعني ارتاحي — مو حرفياً تسوين نفسك ببيتك!"], "mc": [["I ___ Sarah yesterday.", ["visit", "visited", "visiting", "visits"], 1], ["She ___ dinner for us.", ["cooked", "cooking", "cook", "cooks"], 0], ["We ___ for hours.", ["talk", "talked", "talking", "talks"], 1], ["I ___ a small gift.", ["bring", "brought", "bringing", "bringed"], 1]], "fb": [["I ___ (visit/visited) her last week.", "visited"], ["She ___ (make/made) homemade pasta.", "made"], ["We ___ (chat/chatted) for hours.", "chatted"], ["Thanks for ___ (have/having) me.", "having"], ["I ___ (bring/brought) chocolates.", "brought"]], "hw": [["Visit someone and describe it in English.", "زوري شخص ووصفي الزيارة بالإنجليزي."], ["Write 5 sentences about a past visit.", "اكتبي ٥ جمل عن زيارة سابقة."], ["Learn 10 household items in English.", "تعلمي ١٠ أشياء بالبيت."], ["Practice past tense: visited, cooked, talked.", "تمرني على الماضي."], ["Invite a friend in English (text message).", "ادعي صديقة برسالة إنجليزية."]]}, "12": {"t": "At the Barber / Salon", "ta": "عند الصالون", "ic": "💇", "gr": "Past Simple — Irregular Verbs", "gra": "الماضي البسيط — الأفعال الشاذة", "grd": "أفعال ما تنتهي بـ ed في الماضي — لها أشكال خاصة", "grf": "go→went, cut→cut, see→saw, get→got, make→made, take→took", "grex": [["I went to the salon yesterday.", "رحت الصالون أمس."], ["She cut my hair too short!", "قصّت شعري قصير زيادة!"], ["I saw a new hairstyle online.", "شفت تسريحة جديدة أونلاين."], ["It took about an hour.", "أخذ حوالي ساعة."]], "cin": ["You walk into a modern salon in London. The stylist greets you: 'Hello love! What are we doing today?' You show her a photo on your phone. 'I want it exactly like this!' She smiles: 'I can do that. Take a seat!'", "تدخلين صالون عصري بلندن. المصففة ترحب: 'هلا حبيبتي! وش نسوي اليوم؟' تورينها صورة بجوالك. 'أبيه بالضبط كذا!' تبتسم: 'أقدر. اقعدي!'"], "v": [["haircut", "/ˈherkʌt/", "قص شعر", "I need a haircut.", "أحتاج أقص شعري."], ["trim", "/trɪm/", "تخفيف", "Just a trim, please.", "بس تخفيف."], ["bangs", "/bæŋz/", "غرة", "I want bangs.", "أبي غرة."], ["highlights", "/ˈhaɪlaɪts/", "هايلايت", "I'd like some highlights.", "أبي هايلايت."], ["blow-dry", "/bloʊ draɪ/", "سشوار", "Can I get a blow-dry?", "ممكن سشوار؟"], ["layers", "/ˈleɪərz/", "طبقات", "I want layers.", "أبي طبقات."], ["length", "/leŋθ/", "طول", "Keep the length.", "خلّي الطول."], ["short", "/ʃɔːrt/", "قصير", "Not too short!", "لا قصير وايد!"], ["curly", "/ˈkɜːrli/", "مجعد", "My hair is naturally curly.", "شعري مجعد طبيعي."], ["straight", "/streɪt/", "ناعم", "I want it straight.", "أبيه ناعم."], ["dye", "/daɪ/", "صبغة", "I want to dye my hair.", "أبي أصبغ شعري."], ["shampoo", "/ʃæmˈpuː/", "شامبو", "Which shampoo do you use?", "أي شامبو تستخدمين؟"], ["appointment", "/əˈpɔɪntmənt/", "موعد", "Do I need an appointment?", "أحتاج موعد؟"], ["mirror", "/ˈmɪrər/", "مرآة", "Can I see in the mirror?", "ممكن أشوف بالمرآة؟"], ["tip", "/tɪp/", "بقشيش", "How much should I tip?", "كم البقشيش؟"]], "col": [["I want to make my hair", "I want to get my hair done", "get my hair done"], ["Cut my hair short a little", "Trim my hair a little", "trim = قص خفيف"], ["I did highlights", "I got highlights", "got highlights مو did"], ["She is doing my hair", "She's doing my hair", "she's أطبع بالمحادثة"], ["How many costs?", "How much does it cost?", "How much + does"]], "ex": [["I'd like a haircut, please.", "أبي أقص شعري.", "F", "أول شي تقولينه"], ["Just a trim, please.", "بس تخفيف.", "F", "ما تبين قص كثير"], ["Not too short!", "لا قصير وايد!", "I", "تحذرين"], ["Can you take a little off the sides?", "ممكن تقصّين الجوانب شوي؟", "F", "تحددين"], ["I love it!", "عجبني!", "I", "أعجبك"], ["It's not what I wanted.", "مو اللي أبيه.", "F", "ما عجبك"], ["Do you have an appointment available?", "في موعد فاضي؟", "F", "تحجزين"], ["How much will it be?", "كم بيكون؟", "F", "تسألين عن السعر"]], "dl": [["sty", "Hello love! Do you have an appointment?", "هلا حبيبتي! عندك موعد؟"], ["you", "No, is there availability?", "لا، في فراغ؟"], ["sty", "You're in luck! Take a seat.", "محظوظة! اقعدي."], ["sty", "What are we doing today?", "وش نسوي اليوم؟"], ["you", "I'd like a haircut. I saw this style online.", "أبي قص. شفت هالستايل أونلاين."], ["sty", "Oh lovely! How much do you want off?", "حلو! كم تبين أقص؟"], ["you", "Just a few inches. Not too short!", "بس شوي. لا قصير وايد!"], ["sty", "And the color? Would you like highlights?", "واللون؟ تبين هايلايت؟"], ["you", "Maybe next time. Just the cut today.", "يمكن المرة الجاية. بس قص اليوم."], ["sty", "All done! What do you think?", "خلصنا! وش رأيك؟"], ["you", "I love it! It's exactly what I wanted!", "عجبني! بالضبط اللي أبيه!"], ["you", "How much is it?", "كم الحساب؟"]], "kl": [["I want to make my hair.", "I want to get my hair done.", "get + done = تخلّين أحد يسويه لك"], ["I did my hair color.", "I got my hair colored.", "got + colored للصبغة"], ["She cut my hair too much short.", "She cut my hair too short.", "too short بدون much"], ["I went to the hairdress.", "I went to the hairdresser.", "hairdresser مو hairdress"]], "cu": ["ثقافة الصالونات", "ببريطانيا الموعد مهم! لو ما حجزتِ ممكن ما يكون فيه فراغ. البقشيش ١٠-١٥٪ طبيعي. اشرحي بالضبط وش تبين — ورّيهم صورة! 'love' و 'darling' كلمات عادية يستخدمونها مع الزبائن."], "mc": [["I ___ to the salon yesterday.", ["go", "went", "going", "goes"], 1], ["She ___ my hair perfectly.", ["cut", "cutted", "cutting", "cuts"], 0], ["I ___ this style online.", ["see", "saw", "seeing", "seen"], 1], ["It ___ about an hour.", ["take", "took", "taking", "taked"], 1]], "fb": [["I ___ (go/went) to the salon yesterday.", "went"], ["She ___ (cut/cutted) my hair.", "cut"], ["I ___ (see/saw) a new style.", "saw"], ["It ___ (take/took) one hour.", "took"], ["I ___ (get/got) highlights.", "got"]], "hw": [["Learn 5 hairstyle words in English.", "تعلمي ٥ مصطلحات تصفيف."], ["Describe your hair in English.", "وصفي شعرك بالإنجليزي."], ["Practice irregular verbs: go-went, cut-cut, see-saw.", "تمرني على الأفعال الشاذة."], ["Write what you'd say at a salon.", "اكتبي وش بتقولين بالصالون."], ["Watch a salon scene in an English show.", "شوفي مشهد صالون بمسلسل إنجليزي."]]}, "13": {"t": "Weather & Small Talk", "ta": "الطقس والأحاديث الخفيفة", "ic": "🌤️", "gr": "Past Simple — Questions", "gra": "الماضي البسيط — الأسئلة", "grd": "كيف نسأل عن الماضي", "grf": "Did + subject + verb (base form)?", "grex": [["Did you go out yesterday?", "طلعتِ أمس؟"], ["What did you do last weekend?", "وش سويتِ نهاية الأسبوع؟"], ["Did it rain yesterday?", "مطرت أمس؟"], ["Where did you go?", "وين رحتِ؟"]], "cin": ["You're waiting at the bus stop. A British lady smiles and says: 'Terrible weather, isn't it?' This is it — the famous British small talk about weather. You smile back and the conversation begins.", "واقفة عند المحطة. سيدة بريطانية تبتسم: 'الطقس سيء، صح؟' هذي هي — سوالف الطقس الشهيرة عند البريطانيين. تبتسمين والسالفة تبدأ."], "v": [["weather", "/ˈweðər/", "طقس", "How's the weather today?", "كيف الطقس اليوم؟"], ["sunny", "/ˈsʌni/", "مشمس", "It's sunny today!", "اليوم مشمس!"], ["cloudy", "/ˈklaʊdi/", "غيوم", "It's getting cloudy.", "بتغيّم."], ["rainy", "/ˈreɪni/", "ممطر", "It's a rainy day.", "يوم ممطر."], ["windy", "/ˈwɪndi/", "ريح", "It's very windy.", "الهوا قوي."], ["freezing", "/ˈfriːzɪŋ/", "بارد جداً", "It's freezing outside!", "برد مووت برا!"], ["forecast", "/ˈfɔːrkæst/", "توقعات الطقس", "What's the forecast?", "وش التوقعات؟"], ["temperature", "/ˈtemprətʃər/", "درجة حرارة", "What's the temperature?", "كم الحرارة؟"], ["umbrella", "/ʌmˈbrelə/", "مظلة", "Did you bring an umbrella?", "جبتِ مظلة؟"], ["degree", "/dɪˈɡriː/", "درجة", "It's 5 degrees!", "٥ درجات!"], ["humid", "/ˈhjuːmɪd/", "رطب", "It's very humid today.", "رطب اليوم."], ["season", "/ˈsiːzən/", "فصل", "What's your favorite season?", "وش فصلك المفضل؟"], ["spring", "/sprɪŋ/", "ربيع", "Spring is beautiful here.", "الربيع حلو هنا."], ["autumn", "/ˈɔːtəm/", "خريف", "Autumn leaves are lovely.", "أوراق الخريف حلوة."], ["scarf", "/skɑːrf/", "شال/إيشارب", "You need a scarf today!", "تحتاجين شال اليوم!"]], "col": [["The weather is cold today", "It's cold today", "It's + صفة للطقس"], ["How is the weather?", "What's the weather like?", "What's it like أطبع"], ["It's making rain", "It's raining", "It's + verb-ing للطقس"], ["Yesterday it rained a lot", "It rained heavily yesterday", "rained heavily أطبع"], ["The sun is shining strong", "The sun is shining brightly", "brightly ظرف مو strong"]], "ex": [["Lovely day, isn't it?", "يوم حلو، صح؟", "I", "بداية سالفة"], ["Terrible weather!", "طقس سيء!", "I", "الجو سيء"], ["Did you see the forecast?", "شفتِ التوقعات؟", "I", "تسألين"], ["It's supposed to rain later.", "المفروض تمطر بعدين.", "I", "تتوقعين"], ["I love this weather!", "أحب هالطقس!", "I", "الجو حلو"], ["I can't stand the cold!", "ما أتحمل البرد!", "I", "تكرهين البرد"], ["It's boiling today!", "حر اليوم!", "I", "الجو حار"], ["What a beautiful sunset!", "غروب خيالي!", "I", "منظر حلو"]], "dl": [["ldy", "Terrible weather today, isn't it?", "طقس سيء اليوم، صح؟"], ["you", "I know! Did you see the forecast?", "أعرف! شفتِ التوقعات؟"], ["ldy", "They said it'll rain all week!", "قالوا بتمطر كل الأسبوع!"], ["you", "Oh no! I didn't bring my umbrella.", "لا! ما جبت مظلتي."], ["ldy", "Where are you from, dear?", "من وين أنتِ حبيبتي؟"], ["you", "I'm from Saudi Arabia. It's much warmer there!", "من السعودية. الجو أحر هناك!"], ["ldy", "Oh I bet! Did you find it hard adjusting?", "أتوقع! صعب عليك التأقلم؟"], ["you", "A little. I had to buy so many coats!", "شوي. اشتريت جاكيتات كثير!"], ["ldy", "Ha! Welcome to London! Here's my bus.", "ها! أهلاً بلندن! هذا باصي."], ["you", "Nice chatting with you!", "حلوة السالفة!"]], "kl": [["The weather is cold today.", "It's cold today.", "It's + صفة للطقس"], ["How is the weather?", "What's the weather like?", "What's it like أطبع"], ["Yesterday it was raining.", "Yesterday it rained.", "الماضي = rained مو was raining"], ["I am not liking cold.", "I don't like cold weather.", "Present Simple للمشاعر الدائمة"]], "cu": ["ثقافة الطقس", "البريطانيين يسولفون عن الطقس كل اللقاء! هذي طريقتهم يبدأون محادثة. 'Isn't it?' في نهاية الجملة = 'صح؟' — جاوبي بالاتفاق. و 'lovely' كلمة يستخدمونها لكل شي حلو."], "mc": [["___ it rain yesterday?", ["Do", "Does", "Did", "Is"], 2], ["What ___ you do last weekend?", ["do", "did", "does", "are"], 1], ["It's ___ today!", ["freeze", "freezing", "frozen", "froze"], 1], ["She ___ bring her umbrella.", ["don't", "doesn't", "didn't", "isn't"], 2]], "fb": [["___ (Did/Do) you go out yesterday?", "Did"], ["What's the weather ___ (like/as)?", "like"], ["It ___ (rain/rained) all day yesterday.", "rained"], ["It's very ___ (wind/windy) today.", "windy"], ["___ (Did/Does) she see the forecast?", "Did"]], "hw": [["Check the weather in English every morning.", "شيكي الطقس بالإنجليزي كل صباح."], ["Describe today's weather in 3 sentences.", "وصفي طقس اليوم بـ ٣ جمل."], ["Learn all 4 seasons in English.", "تعلمي الفصول الأربع."], ["Start a conversation about weather with someone.", "ابدأي سالفة عن الطقس مع شخص."], ["Watch a British weather report on YouTube.", "شوفي نشرة طقس بريطانية."]]}, "14": {"t": "Booking Online", "ta": "الحجز عبر الإنترنت", "ic": "💻", "gr": "Past Simple — Negatives", "gra": "الماضي البسيط — النفي", "grd": "كيف ننفي بالماضي: didn't + verb", "grf": "Subject + didn't + verb (base form)", "grex": [["I didn't book the hotel.", "ما حجزت الفندق."], ["She didn't confirm the reservation.", "ما أكدت الحجز."], ["We didn't get a confirmation email.", "ما جانا إيميل تأكيد."], ["It didn't work.", "ما اشتغل."]], "cin": ["You open your laptop to book a flight to Paris. The website is in English. Dates, prices, seat selection — all in English. You take a deep breath and start clicking. By the end, you've booked everything. In English. By yourself.", "تفتحين اللابتوب تحجزين طيران لباريس. الموقع بالإنجليزي. تواريخ، أسعار، اختيار مقاعد — كله إنجليزي. تاخذين نفس عميق وتبدأين. بالنهاية حجزتِ كل شي. بالإنجليزي. لحالك."], "v": [["book", "/bʊk/", "أحجز", "I need to book a flight.", "أحتاج أحجز طيران."], ["confirm", "/kənˈfɜːrm/", "أأكد", "Can you confirm my booking?", "ممكن تأكدون حجزي؟"], ["cancel", "/ˈkænsəl/", "ألغي", "I want to cancel my reservation.", "أبي ألغي حجزي."], ["refund", "/ˈriːfʌnd/", "استرداد", "Can I get a refund?", "ممكن استرداد؟"], ["available", "/əˈveɪləbl/", "متاح", "Is this date available?", "هالتاريخ متاح؟"], ["checkout", "/ˈtʃekaʊt/", "إتمام الشراء", "Proceed to checkout.", "كمّلي الشراء."], ["coupon", "/ˈkuːpɑːn/", "كوبون", "Do you have a coupon code?", "عندك كوبون؟"], ["review", "/rɪˈvjuː/", "تقييم", "The reviews are great.", "التقييمات ممتازة."], ["shipping", "/ˈʃɪpɪŋ/", "شحن", "How much is shipping?", "كم الشحن؟"], ["delivery", "/dɪˈlɪvəri/", "توصيل", "When is the delivery date?", "متى التوصيل؟"], ["password", "/ˈpæswɜːrd/", "كلمة سر", "Enter your password.", "ادخلي كلمة السر."], ["sign up", "/saɪn ʌp/", "تسجيل", "Sign up for a free account.", "سجلي حساب مجاني."], ["log in", "/lɒɡ ɪn/", "تسجيل دخول", "Log in to your account.", "سجلي دخول."], ["notification", "/ˌnoʊtɪfɪˈkeɪʃən/", "إشعار", "I got a notification.", "جاني إشعار."], ["update", "/ʌpˈdeɪt/", "تحديث", "Update your app.", "حدّثي التطبيق."]], "col": [["I made a booking online", "I booked online", "booked أبسط"], ["I didn't received the email", "I didn't receive the email", "بعد didn't الفعل بدون ed"], ["I want to do a cancel", "I want to cancel", "cancel فعل — بدون do"], ["The deliver is late", "The delivery is late", "delivery اسم مو deliver"], ["I forget my password", "I forgot my password", "forgot ماضي forget"]], "ex": [["I'd like to book a room.", "أبي أحجز غرفة.", "F", "حجز"], ["Is there availability on the 15th?", "في فراغ يوم ١٥؟", "F", "تسألين عن تاريخ"], ["I didn't receive a confirmation email.", "ما جاني إيميل تأكيد.", "F", "مشكلة"], ["Can I cancel for free?", "أقدر ألغي مجاناً؟", "F", "إلغاء"], ["I'd like to modify my booking.", "أبي أعدل حجزي.", "F", "تغيير"], ["The website isn't working.", "الموقع ما يشتغل.", "I", "مشكلة تقنية"], ["I forgot my password.", "نسيت كلمة السر.", "I", "تسجيل دخول"], ["How do I sign up?", "كيف أسجل؟", "F", "حساب جديد"]], "dl": [["you", "I'd like to book a room for two nights.", "أبي أحجز غرفة ليلتين."], ["htl", "Sure! What dates?", "أكيد! أي تواريخ؟"], ["you", "March 15th to 17th.", "١٥ لـ ١٧ مارس."], ["htl", "Let me check... Yes, we have availability!", "خليني أشيك... إي، في فراغ!"], ["you", "Great! How much per night?", "حلو! كم الليلة؟"], ["htl", "85 pounds per night including breakfast.", "٨٥ باوند الليلة مع الفطور."], ["you", "Perfect. I'd like to book it.", "تمام. أبي أحجز."], ["htl", "I'll need your name, email, and card details.", "أحتاج اسمك، إيميلك، وبطاقتك."], ["you", "Here you go. Will I get a confirmation email?", "تفضلي. بيجيني إيميل تأكيد؟"], ["htl", "Yes, within 5 minutes!", "إي، خلال ٥ دقايق!"]], "kl": [["I didn't received the email.", "I didn't receive the email.", "بعد didn't الفعل بالشكل الأساسي"], ["I want to do a cancel.", "I want to cancel.", "cancel فعل — ما يحتاج do"], ["I forget my password.", "I forgot my password.", "الماضي: forgot مو forget"], ["The website is not work.", "The website isn't working.", "isn't working للمشاكل الحالية"]], "cu": ["ثقافة الحجز", "بالغرب كل شي يُحجز أونلاين — مطاعم، صالونات، أطباء. الإلغاء المجاني عادةً قبل ٢٤-٤٨ ساعة. دايماً اقرأي 'Terms and Conditions'. و 'free cancellation' مو دايماً مجانية — اقرأي التفاصيل!"], "mc": [["I ___ the hotel last week.", ["book", "booked", "booking", "books"], 1], ["She ___ confirm the reservation.", ["don't", "doesn't", "didn't", "isn't"], 2], ["I ___ receive the email.", ["don't", "didn't", "doesn't", "wasn't"], 1], ["___ you book online?", ["Do", "Did", "Does", "Are"], 1]], "fb": [["I ___ (didn't/don't) book the flight yesterday.", "didn't"], ["She ___ (didn't/doesn't) get a confirmation.", "didn't"], ["I ___ (forget/forgot) my password.", "forgot"], ["The website ___ (didn't/doesn't) work yesterday.", "didn't"], ["___ (Did/Do) you cancel the booking?", "Did"]], "hw": [["Book something online in English.", "احجزي شي أونلاين بالإنجليزي."], ["Practice: I'd like to book/cancel/modify.", "تمرني: أبي أحجز/ألغي/أعدل."], ["Learn website vocabulary: sign up, log in, checkout.", "تعلمي مفردات المواقع."], ["Write an email confirming a booking.", "اكتبي إيميل تأكيد حجز."], ["Read online reviews in English.", "اقرأي تقييمات أونلاين بالإنجليزي."]]}, "15": {"t": "At the Gym", "ta": "في النادي الرياضي", "ic": "🏋️", "gr": "Can / Can't", "gra": "أقدر / ما أقدر", "grd": "للقدرة والإذن", "grf": "I can swim. / She can't lift that. / Can you help?", "grex": [["I can run 5 kilometers.", "أقدر أركض ٥ كيلو."], ["Can you show me how?", "ممكن تورينّي كيف؟"], ["I can't do push-ups.", "ما أقدر أسوي ضغط."], ["Can I use this machine?", "أقدر أستخدم الجهاز؟"]], "cin": ["Your first day at a London gym. Machines everywhere. People lifting weights, running on treadmills. A trainer walks up: 'Hey! First time here? Let me show you around!' Time to learn gym language.", "أول يوم بنادي بلندن. أجهزة بكل مكان. ناس يرفعون أثقال، يركضون. مدرب يجي: 'هاي! أول مرة؟ خليني أوريك المكان!'"], "v": [["treadmill", "/ˈtredmɪl/", "سير", "I run on the treadmill.", "أركض على السير."], ["weights", "/weɪts/", "أثقال", "I lift weights.", "أرفع أثقال."], ["stretch", "/stretʃ/", "أتمدد", "Always stretch first.", "دايم تمددي أول."], ["warm up", "/wɔːrm ʌp/", "إحماء", "Let's warm up.", "يلا نحمّي."], ["cool down", "/kuːl daʊn/", "تهدئة", "Don't forget to cool down.", "لا تنسين التهدئة."], ["rep", "/rep/", "تكرار", "Do 10 reps.", "سوي ١٠ تكرارات."], ["set", "/set/", "مجموعة", "3 sets of 10.", "٣ مجموعات من ١٠."], ["bench press", "/bentʃ pres/", "بنش برس", "Can you spot me on the bench?", "تراقبيني على البنش؟"], ["squat", "/skwɑːt/", "سكوات", "Squats are great for legs.", "السكوات ممتاز للرجلين."], ["plank", "/plæŋk/", "بلانك", "Hold a plank for 30 seconds.", "أمسكي بلانك ٣٠ ثانية."], ["cardio", "/ˈkɑːrdioʊ/", "كارديو", "I do cardio first.", "أسوي كارديو أول."], ["protein", "/ˈproʊtiːn/", "بروتين", "I drink a protein shake.", "أشرب بروتين."], ["locker", "/ˈlɑːkər/", "خزنة", "Put your stuff in a locker.", "حطي أغراضك بالخزنة."], ["towel", "/ˈtaʊəl/", "منشفة", "Bring a towel.", "جيبي منشفة."], ["membership", "/ˈmembərʃɪp/", "عضوية", "How much is the membership?", "كم العضوية؟"]], "col": [["I make exercise", "I do exercise / I work out", "do exercise أو work out"], ["I play gym", "I go to the gym", "go to the gym"], ["I am doing sport", "I'm working out", "working out أطبع"], ["How many is the membership?", "How much is the membership?", "How much للسعر"], ["I want to be slim body", "I want to get fit", "get fit أطبع"]], "ex": [["Can I get a day pass?", "ممكن تذكرة يوم؟", "F", "زيارة واحدة"], ["Can you show me how to use this?", "ممكن تورينّي كيف أستخدمه؟", "F", "جهاز جديد"], ["How many reps should I do?", "كم تكرار أسوي؟", "F", "تسألين المدرب"], ["I can't do push-ups yet.", "لسا ما أقدر أسوي ضغط.", "I", "صعب عليك"], ["I'm just a beginner.", "أنا مبتدئة بس.", "I", "تشرحين مستواك"], ["Can I have a towel?", "ممكن منشفة؟", "F", "تحتاجين"], ["Where are the lockers?", "وين الخزنات؟", "F", "أغراضك"], ["What time does the gym close?", "متى يسكر النادي؟", "F", "الوقت"]], "dl": [["trn", "Hey! First time here?", "هاي! أول مرة؟"], ["you", "Yes! Can I get a trial day?", "إي! ممكن يوم تجربة؟"], ["trn", "Sure! Let me show you around.", "أكيد! خليني أوريك."], ["trn", "This is the cardio area. Treadmills and bikes.", "هذي منطقة الكارديو. سير ودراجات."], ["you", "Can you show me how to use the treadmill?", "ممكن تورينّي كيف أستخدم السير؟"], ["trn", "Of course! Press start, set your speed...", "أكيد! اضغطي ستارت، حطي السرعة..."], ["you", "I can't run fast yet. I'm a beginner.", "لسا ما أقدر أركض بسرعة. مبتدئة."], ["trn", "No problem! Start slow. Can you do 15 minutes?", "عادي! ابدأي ببطء. تقدرين ١٥ دقيقة؟"], ["you", "I think so! Where are the lockers?", "أتوقع! وين الخزنات؟"], ["trn", "Over there. Don't forget to warm up first!", "هناك. لا تنسين الإحماء!"]], "kl": [["I make exercise.", "I do exercise. / I work out.", "do exercise أو work out مو make"], ["I play gym.", "I go to the gym.", "go to the gym مو play"], ["I want slim body.", "I want to get fit.", "get fit أطبع من slim body"], ["Can you learn me?", "Can you teach me?", "teach = تعلمين / learn = تتعلمين"]], "cu": ["ثقافة النادي", "بالغرب لازم تمسحين الجهاز بعد ما تستخدمينه (مناديل معقمة). جيبي منشفة. لا تسولفين بالجوال وأنتِ على الجهاز. 'Can you spot me?' يعني تراقبيني وأنا أرفع — مو تصورينّي!"], "mc": [["I ___ run 5 kilometers.", ["am", "can", "do", "have"], 1], ["She ___ lift heavy weights yet.", ["can", "can't", "don't", "doesn't"], 1], ["___ you show me how?", ["Do", "Are", "Can", "Have"], 2], ["I ___ to the gym every day.", ["go", "going", "goes", "went"], 0]], "fb": [["I ___ (can/am) swim.", "can"], ["She ___ (can't/don't) do push-ups.", "can't"], ["___ (Can/Do) I use this machine?", "Can"], ["I ___ (do/make) exercise every day.", "do"], ["___ (Can/Are) you help me?", "Can"]], "hw": [["Learn 10 gym exercises in English.", "تعلمي ١٠ تمارين بالإنجليزي."], ["Describe your workout in English.", "وصفي تمرينك بالإنجليزي."], ["Practice: Can you show me how to...", "تمرني: ممكن تورينّي كيف..."], ["Watch a gym tour video in English.", "شوفي فيديو جولة نادي."], ["Write your fitness goals in English.", "اكتبي أهدافك الرياضية بالإنجليزي."]]}, "16": {"t": "Emergency Situations", "ta": "مواقف طارئة", "ic": "🚨", "gr": "Must / Have to / Need to", "gra": "لازم / يجب", "grd": "للضرورة والإلزام", "grf": "I must go / You have to call 999 / I need to see a doctor", "grex": [["You must call 999 now!", "لازم تتصلين ٩٩٩!"], ["I have to go to the hospital.", "لازم أروح المستشفى."], ["You need to stay calm.", "لازم تهدين."], ["I must find help.", "لازم ألاقي مساعدة."]], "cin": ["Your bag is gone. You left it on the bench for one second. Panic rises. You look around — a policeman stands nearby. 'Excuse me! I think someone stole my bag!' Your English has to work now. This is real.", "شنطتك راحت. خليتيها على الكرسي ثانية وحدة. خوف. تطالعين حولك — شرطي قريب. 'لو سمحت! أحس أحد سرق شنطتي!' إنجليزيتك لازم تشتغل الحين. هذا واقع."], "v": [["emergency", "/ɪˈmɜːrdʒənsi/", "طوارئ", "This is an emergency!", "هذي حالة طوارئ!"], ["ambulance", "/ˈæmbjələns/", "إسعاف", "Call an ambulance!", "اتصلي إسعاف!"], ["police", "/pəˈliːs/", "شرطة", "I need the police.", "أحتاج الشرطة."], ["fire", "/ˈfaɪər/", "حريق/إطفاء", "There's a fire!", "في حريق!"], ["accident", "/ˈæksɪdənt/", "حادث", "There's been an accident.", "صار حادث."], ["steal", "/stiːl/", "يسرق", "Someone stole my bag!", "أحد سرق شنطتي!"], ["help", "/help/", "مساعدة", "Help! Please help me!", "ساعدوني!"], ["danger", "/ˈdeɪndʒər/", "خطر", "You're in danger!", "أنتِ بخطر!"], ["hurt", "/hɜːrt/", "يتأذى", "Are you hurt?", "متأذية؟"], ["bleed", "/bliːd/", "ينزف", "I'm bleeding!", "أنزف!"], ["faint", "/feɪnt/", "يغمى عليه", "I feel like I'm going to faint.", "حاسة بأغمى عليّ."], ["conscious", "/ˈkɒnʃəs/", "واعي", "Is he conscious?", "هو واعي؟"], ["breathe", "/briːð/", "يتنفس", "I can't breathe!", "ما أقدر أتنفس!"], ["calm", "/kɑːm/", "هادئ", "Stay calm!", "اهدي!"], ["insurance", "/ɪnˈʃʊrəns/", "تأمين", "Do you have insurance?", "عندك تأمين؟"]], "col": [["Call to the police", "Call the police", "call بدون to"], ["I have been robbed", "I've been robbed", "I've أطبع"], ["Go to the hospital quick", "Go to the hospital quickly", "quickly ظرف مو quick"], ["I need go now", "I need to go now", "need + to + verb"], ["The car hit to me", "The car hit me", "hit بدون to"]], "ex": [["Help! Call 999!", "ساعدوني! اتصلوا ٩٩٩!", "F", "حالة طوارئ"], ["Someone stole my bag!", "أحد سرق شنطتي!", "F", "سرقة"], ["I need to see a doctor.", "لازم أشوف دكتور.", "F", "طبي"], ["There's been an accident.", "صار حادث.", "F", "حادث"], ["I've lost my passport.", "ضيّعت جوازي.", "F", "فقدان"], ["Where's the nearest hospital?", "وين أقرب مستشفى؟", "F", "طوارئ"], ["Stay calm. Everything will be okay.", "اهدي. كل شي بيكون زين.", "I", "تطمنين شخص"], ["I need to file a report.", "أحتاج أسجل بلاغ.", "F", "شرطة"]], "dl": [["you", "Excuse me officer! Someone stole my bag!", "لو سمحت! أحد سرق شنطتي!"], ["pol", "Stay calm. When did this happen?", "اهدي. متى صار؟"], ["you", "Just now! I left it on the bench for a second.", "الحين! خليتها على الكرسي ثانية."], ["pol", "What did the bag look like?", "كيف شكل الشنطة؟"], ["you", "It's a black leather bag with a gold chain.", "شنطة جلد سوداء بسلسلة ذهبية."], ["pol", "What was inside?", "وش كان فيها؟"], ["you", "My passport, wallet, and phone.", "جوازي، محفظتي، وجوالي."], ["pol", "You need to file a report. Come with me.", "لازم تسجلين بلاغ. تعالي معي."], ["you", "I also need to call my embassy.", "وكمان لازم أتصل بسفارتي."], ["pol", "Of course. Here, you can use my phone.", "أكيد. تفضلي جوالي."]], "kl": [["Call to the police.", "Call the police.", "call بدون to قبل المفعول"], ["Someone robbed my bag.", "Someone stole my bag.", "stole = سرق / robbed = سرق شخص"], ["I need go now.", "I need to go now.", "need + to + verb"], ["I lost my passport.", "I've lost my passport.", "Present Perfect أفضل لخبر جديد"]], "cu": ["أرقام الطوارئ", "ببريطانيا رقم الطوارئ ٩٩٩ (أو ١١٢). بأمريكا ٩١١. الشرطي ممكن يسألك 'Can you describe what happened?' — وصفي بالترتيب. لو ضاع جوازك اتصلي بالسفارة السعودية فوراً."], "mc": [["You ___ call 999 now!", ["can", "must", "may", "might"], 1], ["I ___ to see a doctor.", ["must", "need", "have", "should"], 1], ["Someone ___ my bag!", ["steal", "stole", "stealing", "steals"], 1], ["I ___ breathe!", ["don't", "can't", "doesn't", "am not"], 1]], "fb": [["You ___ (must/can) call the police now.", "must"], ["I ___ (need/must) to file a report.", "need"], ["Someone ___ (stole/steal) my passport.", "stole"], ["I ___ (can't/don't) find my wallet.", "can't"], ["___ (Have/Must) you seen my bag?", "Have"]], "hw": [["Learn emergency numbers: 999 (UK), 911 (US).", "تعلمي أرقام الطوارئ."], ["Practice: Someone stole my... / I've lost my...", "تمرني: أحد سرق... / ضيّعت..."], ["Write down your embassy's phone number.", "اكتبي رقم سفارتك."], ["Learn to describe objects: color, size, material.", "تعلمي توصفين الأشياء."], ["Role-play an emergency scenario in English.", "مثّلي موقف طوارئ بالإنجليزي."]]}};
+
+// ==================== ENHANCED TTS — REALISTIC VOICES ====================
+const S=window.speechSynthesis;
+let voicesLoaded=false;
+let maleVoice=null,femaleVoice=null,defaultVoice=null;
+
+function loadVoices(){
+  const v=S.getVoices();if(!v.length)return;
+  voicesLoaded=true;
+  // Female voices (for barista, mom, pharmacist, etc)
+  const femPref=['Google UK English Female','Samantha','Karen','Moira','Fiona','Victoria','Zira'];
+  for(const n of femPref){const f=v.find(x=>x.name.includes(n));if(f){femaleVoice=f;break}}
+  // Male voices (for waiter, driver, policeman, etc)  
+  const malPref=['Google UK English Male','Daniel','Alex','Tom','David','James','Google US English'];
+  for(const n of malPref){const f=v.find(x=>x.name.includes(n));if(f){maleVoice=f;break}}
+  // Default
+  const defPref=['Google US English','Samantha','Daniel','Karen','Alex'];
+  for(const n of defPref){const f=v.find(x=>x.name.includes(n));if(f){defaultVoice=f;break}}
+  if(!defaultVoice)defaultVoice=v.find(x=>x.lang.startsWith('en'))||v[0];
+  if(!femaleVoice)femaleVoice=defaultVoice;
+  if(!maleVoice)maleVoice=defaultVoice;
+}
+S.onvoiceschanged=loadVoices;
+setTimeout(loadVoices,500);
+
+// Enhanced speak with voice selection
+function say(t,r=0.8,cb,voice='default',pitch=1){
+  S.cancel();
+  const u=new SpeechSynthesisUtterance(t);
+  if(voice==='female')u.voice=femaleVoice;
+  else if(voice==='male')u.voice=maleVoice;
+  else u.voice=defaultVoice;
+  u.rate=r;u.pitch=pitch;u.lang='en-US';
+  $('abar-txt').textContent=t.substring(0,30)+(t.length>30?'...':'');
+  $('audioBar').classList.add('show');
+  u.onend=()=>{if(cb)cb();else $('audioBar').classList.remove('show')};
+  u.onerror=()=>$('audioBar').classList.remove('show');
+  S.speak(u);
+}
+function stopA(){S.cancel();$('audioBar').classList.remove('show')}
+function sayW(w,ex){stopA();say(w,0.55,()=>setTimeout(()=>say(ex,0.7),500))}
+// Keep alive for long utterances
+setInterval(()=>{if(S.speaking)S.resume()},10000);
+
+// ==================== VERB TENSES DATABASE ====================
+const VERBS_DB = [
+  {base:'be',past:'was/were',pp:'been',ar:'يكون',s:'is',ing:'being'},
+  {base:'have',past:'had',pp:'had',ar:'يملك',s:'has',ing:'having'},
+  {base:'do',past:'did',pp:'done',ar:'يفعل',s:'does',ing:'doing'},
+  {base:'go',past:'went',pp:'gone',ar:'يذهب',s:'goes',ing:'going'},
+  {base:'come',past:'came',pp:'come',ar:'يأتي',s:'comes',ing:'coming'},
+  {base:'see',past:'saw',pp:'seen',ar:'يرى',s:'sees',ing:'seeing'},
+  {base:'take',past:'took',pp:'taken',ar:'يأخذ',s:'takes',ing:'taking'},
+  {base:'make',past:'made',pp:'made',ar:'يصنع',s:'makes',ing:'making'},
+  {base:'get',past:'got',pp:'gotten',ar:'يحصل',s:'gets',ing:'getting'},
+  {base:'give',past:'gave',pp:'given',ar:'يعطي',s:'gives',ing:'giving'},
+  {base:'know',past:'knew',pp:'known',ar:'يعرف',s:'knows',ing:'knowing'},
+  {base:'think',past:'thought',pp:'thought',ar:'يفكر',s:'thinks',ing:'thinking'},
+  {base:'say',past:'said',pp:'said',ar:'يقول',s:'says',ing:'saying'},
+  {base:'tell',past:'told',pp:'told',ar:'يخبر',s:'tells',ing:'telling'},
+  {base:'find',past:'found',pp:'found',ar:'يجد',s:'finds',ing:'finding'},
+  {base:'put',past:'put',pp:'put',ar:'يضع',s:'puts',ing:'putting'},
+  {base:'buy',past:'bought',pp:'bought',ar:'يشتري',s:'buys',ing:'buying'},
+  {base:'eat',past:'ate',pp:'eaten',ar:'يأكل',s:'eats',ing:'eating'},
+  {base:'drink',past:'drank',pp:'drunk',ar:'يشرب',s:'drinks',ing:'drinking'},
+  {base:'sleep',past:'slept',pp:'slept',ar:'ينام',s:'sleeps',ing:'sleeping'},
+  {base:'wake',past:'woke',pp:'woken',ar:'يصحو',s:'wakes',ing:'waking'},
+  {base:'drive',past:'drove',pp:'driven',ar:'يسوق',s:'drives',ing:'driving'},
+  {base:'fly',past:'flew',pp:'flown',ar:'يطير',s:'flies',ing:'flying'},
+  {base:'run',past:'ran',pp:'run',ar:'يركض',s:'runs',ing:'running'},
+  {base:'speak',past:'spoke',pp:'spoken',ar:'يتكلم',s:'speaks',ing:'speaking'},
+  {base:'write',past:'wrote',pp:'written',ar:'يكتب',s:'writes',ing:'writing'},
+  {base:'read',past:'read',pp:'read',ar:'يقرأ',s:'reads',ing:'reading'},
+  {base:'sit',past:'sat',pp:'sat',ar:'يجلس',s:'sits',ing:'sitting'},
+  {base:'stand',past:'stood',pp:'stood',ar:'يقف',s:'stands',ing:'standing'},
+  {base:'pay',past:'paid',pp:'paid',ar:'يدفع',s:'pays',ing:'paying'},
+  {base:'meet',past:'met',pp:'met',ar:'يقابل',s:'meets',ing:'meeting'},
+  {base:'leave',past:'left',pp:'left',ar:'يغادر',s:'leaves',ing:'leaving'},
+  {base:'feel',past:'felt',pp:'felt',ar:'يحس',s:'feels',ing:'feeling'},
+  {base:'begin',past:'began',pp:'begun',ar:'يبدأ',s:'begins',ing:'beginning'},
+  {base:'bring',past:'brought',pp:'brought',ar:'يجيب',s:'brings',ing:'bringing'},
+  {base:'keep',past:'kept',pp:'kept',ar:'يحتفظ',s:'keeps',ing:'keeping'},
+  {base:'send',past:'sent',pp:'sent',ar:'يرسل',s:'sends',ing:'sending'},
+  {base:'fall',past:'fell',pp:'fallen',ar:'يطيح',s:'falls',ing:'falling'},
+  {base:'break',past:'broke',pp:'broken',ar:'يكسر',s:'breaks',ing:'breaking'},
+  {base:'lose',past:'lost',pp:'lost',ar:'يفقد',s:'loses',ing:'losing'},
+  // Regular verbs
+  {base:'walk',past:'walked',pp:'walked',ar:'يمشي',s:'walks',ing:'walking',reg:true},
+  {base:'talk',past:'talked',pp:'talked',ar:'يتكلم',s:'talks',ing:'talking',reg:true},
+  {base:'work',past:'worked',pp:'worked',ar:'يشتغل',s:'works',ing:'working',reg:true},
+  {base:'play',past:'played',pp:'played',ar:'يلعب',s:'plays',ing:'playing',reg:true},
+  {base:'cook',past:'cooked',pp:'cooked',ar:'يطبخ',s:'cooks',ing:'cooking',reg:true},
+  {base:'clean',past:'cleaned',pp:'cleaned',ar:'ينظف',s:'cleans',ing:'cleaning',reg:true},
+  {base:'help',past:'helped',pp:'helped',ar:'يساعد',s:'helps',ing:'helping',reg:true},
+  {base:'open',past:'opened',pp:'opened',ar:'يفتح',s:'opens',ing:'opening',reg:true},
+  {base:'close',past:'closed',pp:'closed',ar:'يسكر',s:'closes',ing:'closing',reg:true},
+  {base:'start',past:'started',pp:'started',ar:'يبدأ',s:'starts',ing:'starting',reg:true},
+];
+
+const TENSES_INFO = [
+  {name:'Present Simple',ar:'المضارع البسيط',use:'العادات والحقائق',formula:'I walk / She walks',ex:'I drink coffee every morning.',exAr:'أشرب قهوة كل صباح.'},
+  {name:'Present Continuous',ar:'المضارع المستمر',use:'اللي يصير الحين',formula:'I am walking / She is walking',ex:'I am drinking coffee right now.',exAr:'أشرب قهوة الحين.'},
+  {name:'Past Simple',ar:'الماضي البسيط',use:'أحداث خلصت بالماضي',formula:'I walked / She walked',ex:'I drank coffee yesterday.',exAr:'شربت قهوة أمس.'},
+  {name:'Past Continuous',ar:'الماضي المستمر',use:'فعل كان مستمر بالماضي',formula:'I was walking / She was walking',ex:'I was drinking coffee when you called.',exAr:'كنت أشرب قهوة لما اتصلتِ.'},
+  {name:'Future (will)',ar:'المستقبل',use:'قرارات لحظية وتنبؤات',formula:'I will walk / She will walk',ex:'I will drink coffee later.',exAr:'بأشرب قهوة بعدين.'},
+  {name:'Present Perfect',ar:'المضارع التام',use:'تجارب أو أحداث مرتبطة بالحين',formula:'I have walked / She has walked',ex:'I have drunk 3 cups today.',exAr:'شربت ٣ أكواب اليوم.'},
+];
+
+// ==================== VOWELS DATABASE ====================
+const VOWELS_DB = {
+  letters: [
+    {letter:'A',sounds:[
+      {sound:'/eɪ/',name:'Long A',words:['cake','name','date','late','make'],ar:'مثل الياء الطويلة'},
+      {sound:'/æ/',name:'Short A',words:['cat','bag','hat','map','sad'],ar:'فتحة عريضة'},
+      {sound:'/ɑː/',name:'Ah sound',words:['car','far','star','park','arm'],ar:'ألف طويلة مفتوحة'},
+    ]},
+    {letter:'E',sounds:[
+      {sound:'/iː/',name:'Long E',words:['see','tree','beach','read','eat'],ar:'كسرة طويلة'},
+      {sound:'/e/',name:'Short E',words:['bed','red','ten','pen','get'],ar:'فتحة قصيرة'},
+      {sound:'/ə/',name:'Schwa (silent)',words:['the','open','taken','garden','problem'],ar:'صوت ضعيف شبه صامت'},
+    ]},
+    {letter:'I',sounds:[
+      {sound:'/aɪ/',name:'Long I',words:['time','bike','nice','five','like'],ar:'آي طويلة'},
+      {sound:'/ɪ/',name:'Short I',words:['sit','big','fish','trip','milk'],ar:'كسرة قصيرة'},
+    ]},
+    {letter:'O',sounds:[
+      {sound:'/oʊ/',name:'Long O',words:['go','home','phone','close','note'],ar:'واو طويلة'},
+      {sound:'/ɒ/',name:'Short O',words:['hot','dog','stop','clock','box'],ar:'فتحة مدورة'},
+      {sound:'/uː/',name:'OO sound',words:['food','moon','room','cool','school'],ar:'ضمة طويلة'},
+    ]},
+    {letter:'U',sounds:[
+      {sound:'/juː/',name:'Long U',words:['use','cute','huge','music','human'],ar:'يو طويلة'},
+      {sound:'/ʌ/',name:'Short U',words:['cup','bus','run','sun','fun'],ar:'فتحة قصيرة'},
+      {sound:'/ʊ/',name:'OO sound',words:['put','full','push','book','look'],ar:'ضمة قصيرة'},
+    ]},
+  ],
+  tips: [
+    {tip:'حرف E الصامت في نهاية الكلمة يخلي الحرف اللي قبله ينطق باسمه',ex:'mat → mate, kit → kite, not → note',ar:'mat = مات (قصير)، mate = ميت (طويل)'},
+    {tip:'حرفين حلة مع بعض يسوون صوت جديد',ex:'OO = /uː/ (food), EA = /iː/ (eat), AI = /eɪ/ (rain)',ar:'تعلمي الأزواج الشائعة'},
+    {tip:'حرف العلة الضعيف Schwa /ə/ هو أكثر صوت بالإنجليزي',ex:'about, problem, open, taken',ar:'ينطق مثل "أه" سريعة وضعيفة'},
+  ]
+};
+
+// ==================== UTILS ====================
+const $=id=>document.getElementById(id);
+let done=JSON.parse(localStorage.getItem('lmr_done')||'[]');
+let curLesson=null;let hist=[];
+const LLIST=[
+{id:1,en:'Waking Up & Morning Routine',ar:'الصباح والروتين اليومي',ic:'☀️'},
+{id:2,en:'At the Café',ar:'في المقهى',ic:'☕'},
+{id:3,en:'Grocery Shopping',ar:'التسوق من البقالة',ic:'🛒'},
+{id:4,en:'Asking for Directions',ar:'السؤال عن الاتجاهات',ic:'🗺️'},
+{id:5,en:'At the Restaurant',ar:'في المطعم',ic:'🍽️'},
+{id:6,en:'Meeting New People',ar:'التعرف على أشخاص جدد',ic:'👋'},
+{id:7,en:'Phone Calls & Texting',ar:'المكالمات والرسائل',ic:'📱'},
+{id:8,en:'At the Pharmacy',ar:'في الصيدلية',ic:'💊'},
+{id:9,en:'Taking a Taxi / Uber',ar:'ركوب التاكسي',ic:'🚕'},
+{id:10,en:'At the Bank',ar:'في البنك',ic:'🏦'},
+{id:11,en:'Visiting a Friend',ar:'زيارة صديقة',ic:'🏠'},
+{id:12,en:'At the Barber / Salon',ar:'عند الصالون',ic:'💇'},
+{id:13,en:'Weather & Small Talk',ar:'الطقس والأحاديث الخفيفة',ic:'🌤️'},
+{id:14,en:'Booking Online',ar:'الحجز عبر الإنترنت',ic:'💻'},
+{id:15,en:'At the Gym',ar:'في النادي الرياضي',ic:'🏋️'},
+{id:16,en:'Emergency Situations',ar:'مواقف طارئة',ic:'🚨'},
+{id:17,en:'Shopping for Clothes',ar:'شراء ملابس',ic:'👗'},
+{id:18,en:'At the Post Office',ar:'في مكتب البريد',ic:'📮'},
+{id:19,en:'Renting an Apartment',ar:'استئجار شقة',ic:'🏢'},
+{id:20,en:'At the Hospital',ar:'في المستشفى',ic:'🏥'},
+{id:21,en:'Review: Daily Life',ar:'مراجعة: الحياة اليومية',ic:'🔄'},
+{id:22,en:'Review: Out & About',ar:'مراجعة: في الشارع',ic:'🔄'},
+{id:23,en:'Review: Services',ar:'مراجعة: الخدمات',ic:'🔄'},
+{id:24,en:'Review: Social',ar:'مراجعة: اجتماعي',ic:'🔄'},
+{id:25,en:'Level 1 Final Challenge',ar:'التحدي النهائي',ic:'🏆'}
+];
+
+// ==================== NAVIGATION ====================
+function showP(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));$(id).classList.add('active');$('nav').classList.toggle('hide',id==='pgCover');window.scrollTo(0,0);updProg()}
+function goHome(){hist=[];showP('pgCover')}
+function goList(){hist=['pgCover'];showP('pgList');renderList()}
+function goVerbs(){hist.push(document.querySelector('.page.active').id);showP('pgVerbs');renderVerbs()}
+function goVowels(){hist.push(document.querySelector('.page.active').id);showP('pgVowels');renderVowels()}
+function goBack(){if(hist.length){const p=hist.pop();showP(p);if(p==='pgList')renderList()}else goHome()}
+function updProg(){const p=Math.round((done.length/16)*100);$('progFill').style.width=p+'%';$('progTxt').textContent=done.length+'/16'}
+function markDone(id){if(!done.includes(id)){done.push(id);localStorage.setItem('lmr_done',JSON.stringify(done))}updProg()}
+
+// ==================== RENDER LESSONS LIST ====================
+function renderList(){
+  let h='';
+  LLIST.forEach(l=>{
+    const d=done.includes(l.id);const has=!!LD[l.id];
+    h+=`<div class="lcard ${d?'done':''} ${!has?'empty':''}" onclick="${has?'openL('+l.id+')':''}">
+      <div class="lnum">${l.id}</div><div class="info"><div class="ten">${l.ic} ${l.en}</div><div class="tar">${l.ar}</div></div>
+      <div class="sts">${d?'✅':has?'▶':'🔜'}</div></div>`;
+  });
+  $('listGrid').innerHTML=h;
+}
+
+// ==================== RENDER VERBS PAGE ====================
+function renderVerbs(){
+  let h='<div style="margin-bottom:1.5rem">';
+  // Tenses overview
+  h+='<h3 style="color:var(--accent);margin-bottom:1rem">📊 الأزمنة الأساسية</h3>';
+  h+='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.6rem;margin-bottom:2rem">';
+  TENSES_INFO.forEach(t=>{
+    h+=`<div class="ch-card" style="margin:0"><div style="font-weight:700;color:var(--blue);font-size:.85rem;font-family:'Poppins',sans-serif">${t.name}</div>
+    <div style="color:var(--accent);font-size:.9rem;margin:.2rem 0">${t.ar}</div>
+    <div style="font-size:.75rem;color:var(--muted)">${t.use}</div>
+    <div class="gr-formula" style="font-size:.8rem;padding:.4rem;margin:.4rem 0">${t.formula}</div>
+    <div style="display:flex;align-items:center;gap:.3rem;font-size:.8rem"><button class="sp" onclick="say('${t.ex}',0.7)">🔊</button><span class="en" style="color:#ccc;display:inline">${t.ex}</span></div>
+    <div style="font-size:.75rem;color:var(--muted)">${t.exAr}</div></div>`;
+  });
+  h+='</div>';
+  // Verb table
+  h+='<h3 style="color:var(--accent);margin-bottom:1rem">📖 ٥٠ فعل أساسي — كل الأزمنة</h3>';
+  h+=`<table><thead><tr><th>🔊</th><th>Base</th><th>الترجمة</th><th>He/She</th><th>-ing</th><th>Past</th><th>Past Part.</th><th>Type</th></tr></thead><tbody>`;
+  VERBS_DB.forEach(v=>{
+    h+=`<tr>
+    <td><button class="sp" onclick="say('${v.base}. ${v.past}. ${v.pp}.',0.6)">🔊</button></td>
+    <td class="tden" style="font-weight:600;color:white;cursor:pointer" onclick="say('${v.base}',0.55)">${v.base}</td>
+    <td class="vtd-ar">${v.ar}</td>
+    <td class="tden">${v.s}</td>
+    <td class="tden">${v.ing}</td>
+    <td class="tden" style="color:var(--accent)">${v.past}</td>
+    <td class="tden" style="color:var(--green)">${v.pp}</td>
+    <td><span style="font-size:.6rem;padding:.1rem .4rem;border-radius:8px;${v.reg?'background:rgba(46,204,113,.1);color:var(--green)':'background:rgba(255,107,53,.1);color:var(--accent2)'}">${v.reg?'Regular':'Irregular'}</span></td>
+    </tr>`;
+  });
+  h+='</tbody></table></div>';
+  $('verbsContent').innerHTML=h;
+}
+
+// ==================== RENDER VOWELS PAGE ====================
+function renderVowels(){
+  let h='';
+  VOWELS_DB.letters.forEach(vl=>{
+    h+=`<div style="margin-bottom:2rem"><h3 style="font-size:2rem;color:var(--accent);margin-bottom:.8rem">${vl.letter}</h3>`;
+    vl.sounds.forEach(s=>{
+      h+=`<div class="ch-card" style="margin-bottom:.5rem">
+      <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.5rem">
+        <span style="font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;color:var(--blue)">${s.sound}</span>
+        <span style="font-family:'Poppins',sans-serif;font-size:.85rem;color:white">${s.name}</span>
+        <span style="font-size:.8rem;color:var(--accent)">${s.ar}</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:.4rem">`;
+      s.words.forEach(w=>{
+        h+=`<span onclick="say('${w}',0.55)" style="cursor:pointer;padding:.3rem .7rem;background:rgba(74,144,217,.08);border:1px solid rgba(74,144,217,.15);border-radius:8px;font-family:'Poppins',sans-serif;font-size:.85rem;color:#ddd;transition:all .2s" onmouseover="this.style.background='rgba(230,168,23,.15)';this.style.borderColor='rgba(230,168,23,.3)';this.style.color='var(--accent)'" onmouseout="this.style.background='rgba(74,144,217,.08)';this.style.borderColor='rgba(74,144,217,.15)';this.style.color='#ddd'">🔊 ${w}</span>`;
+      });
+      h+=`</div></div>`;
+    });
+    h+=`</div>`;
+  });
+  // Tips
+  h+=`<h3 style="color:var(--accent);margin:1.5rem 0 .8rem">💡 قواعد ذهبية لحروف العلة</h3>`;
+  VOWELS_DB.tips.forEach(t=>{
+    h+=`<div class="klr" style="border-color:rgba(230,168,23,.15);border-right-color:var(--accent)">
+    <div style="font-weight:700;color:var(--accent);margin-bottom:.3rem">${t.tip}</div>
+    <div style="font-family:'Poppins',sans-serif;direction:ltr;text-align:left;color:#ccc;font-size:.85rem;margin-bottom:.3rem">${t.ex}</div>
+    <div style="font-size:.8rem;color:var(--muted)">${t.ar}</div></div>`;
+  });
+  $('vowelsContent').innerHTML=h;
+}
+
+// ==================== RENDER LESSON ====================
+function openL(id){
+  curLesson=id;hist.push('pgList');showP('pgLesson');
+  const l=LLIST.find(x=>x.id===id);const d=LD[id];if(!d)return;
+  let h='';
+  // HERO
+  h+=`<div class="l-hero"><div class="l-badge">🔰 المستوى الأول — البداية</div><div class="l-num">${String(id).padStart(2,'0')}</div><h1>${l.en}</h1><div class="sub">${l.ar}</div></div>`;
+  // CINEMA
+  h+=`<div class="sec"><div class="sec-h"><div class="sec-ic ic-gold">🎭</div><div class="sec-t">المقدمة القصصية<small>Cinematic Intro</small></div></div>
+  <div class="cin"><div class="cin-en"><div class="cin-lb en">🇬🇧 ENGLISH</div><button class="sp" onclick="say(\`${d.cin[0].replace(/`/g,"'")}\`,0.75,'default')" style="float:left;margin:0 8px 4px 0">🔊</button><p>${d.cin[0]}</p></div>
+  <div class="cin-ar"><div class="cin-lb ar">🇸🇦 عربي</div><p>${d.cin[1]}</p></div></div></div><div class="dvd"></div>`;
+  // VOCAB TABLE
+  h+=`<div class="sec"><div class="sec-h"><div class="sec-ic ic-blue">📚</div><div class="sec-t">المفردات<small>Vocabulary — ${d.v.length} Words</small></div></div>
+  <p style="color:var(--muted);font-size:.8rem;margin-bottom:.8rem">🔊 اضغطي على أي كلمة أو زر الصوت لسماعها</p>
+  <table><thead><tr><th>#</th><th>🔊</th><th>English</th><th>النطق</th><th>عربي</th></tr></thead><tbody>`;
+  d.v.forEach((v,i)=>{
+    h+=`<tr><td>${i+1}</td><td><button class="sp" onclick="sayW('${v[0].replace(/'/g,"\\'")}','${v[3].replace(/'/g,"\\'")}')">🔊</button></td>
+    <td class="tden"><span class="vtd-w" onclick="say('${v[0].replace(/'/g,"\\'")}',0.55)">${v[0]}</span></td><td class="vtd-p">${v[1]}</td><td class="vtd-ar">${v[2]}</td></tr>
+    <tr><td colspan="3" class="vtd-ex"><button class="sp" onclick="say('${v[3].replace(/'/g,"\\'")}',0.7)" style="width:22px;height:22px;font-size:.6rem">🔊</button> ${v[3]}</td><td colspan="2" class="vtd-exa">${v[4]}</td></tr>`;
+  });
+  h+=`</tbody></table></div><div class="dvd"></div>`;
+  // GRAMMAR
+  h+=`<div class="sec"><div class="sec-h"><div class="sec-ic ic-green">🧠</div><div class="sec-t">${d.gra}<small>${d.gr}</small></div></div>
+  <p style="color:var(--muted);margin-bottom:.8rem">${d.grd}</p>
+  <div class="gr-box"><div class="gr-formula">${d.grf}</div>
+  <table><thead class="gr-th"><tr><th>🔊</th><th>English</th><th>عربي</th></tr></thead><tbody>`;
+  d.grex.forEach(e=>{h+=`<tr><td><button class="sp" onclick="say('${e[0].replace(/'/g,"\\'")}',0.7)" style="width:22px;height:22px;font-size:.6rem">🔊</button></td><td class="tden">${e[0]}</td><td>${e[1]}</td></tr>`});
+  h+=`</tbody></table></div></div><div class="dvd"></div>`;
+  // COLLOCATIONS
+  if(d.col&&d.col.length){
+    h+=`<div class="sec"><div class="sec-h"><div class="sec-ic ic-green">🔗</div><div class="sec-t">التلازم اللفظي<small>Don't Say / Say</small></div></div>`;
+    d.col.forEach(c=>{h+=`<div class="coll-w">❌ ${c[0]}</div><div class="coll-r">✅ ${c[1]} <button class="sp" onclick="say('${c[1].replace(/'/g,"\\'")}',0.7)" style="width:22px;height:22px;font-size:.6rem;margin-right:4px">🔊</button></div><div class="coll-t">💡 ${c[2]}</div>`});
+    h+=`</div><div class="dvd"></div>`;
+  }
+  // EXPRESSIONS
+  h+=`<div class="sec"><div class="sec-h"><div class="sec-ic ic-gold">💬</div><div class="sec-t">عبارات حقيقية<small>Real-Life Expressions</small></div></div>`;
+  d.ex.forEach(e=>{
+    h+=`<div class="expr-card"><span class="expr-b ${e[2]==='F'?'f':'i'}">${e[2]==='F'?'Formal':'Informal'}</span>
+    <div style="flex:1"><div class="expr-en"><button class="sp" onclick="say('${e[0].replace(/'/g,"\\'")}',0.7)" style="width:22px;height:22px;font-size:.6rem;margin-left:4px">🔊</button> ${e[0]}</div><div class="expr-ar">${e[1]}</div><div class="expr-w">🕐 ${e[3]}</div></div></div>`;
+  });
+  h+=`</div><div class="dvd"></div>`;
+  // DIALOGUE — with realistic voices
+  h+=`<div class="sec"><div class="sec-h"><div class="sec-ic ic-blue">📖</div><div class="sec-t">حوار المشهد<small>Scene Dialogue</small></div></div>
+  <div class="dl-box"><div class="dl-hdr">🎬 ${l.en}</div>
+  <div class="dl-play"><button class="pbtn" id="dlPB" onclick="playDL()">▶ تشغيل الحوار كامل</button>
+  <button class="spd" onclick="dlSpd=0.55;updSpd(this)">🐢 بطيء</button><button class="spd a" onclick="dlSpd=0.75;updSpd(this)">🚶 عادي</button><button class="spd" onclick="dlSpd=0.95;updSpd(this)">🏃 سريع</button></div>
+  <div class="dl-body">`;
+  d.dl.forEach(dl=>{
+    const isYou=dl[0]==='you';
+    const clean=dl[1].replace(/<[^>]*>/g,'');
+    const vc=isYou?'female':'male';
+    const pitch=isYou?1.05:0.9;
+    h+=`<div class="dl-line"><div class="dl-av ${isYou?'you':'oth'}">${isYou?'👩':'👤'}</div>
+    <div class="dl-bub"><div class="dl-e"><button class="sp" onclick="say('${clean.replace(/'/g,"\\'")}',0.75,null,'${vc}',${pitch})" style="width:22px;height:22px;font-size:.6rem;float:left;margin:2px 5px 0 0">🔊</button>${dl[1]}</div><div class="dl-a">${dl[2]}</div></div></div>`;
+  });
+  h+=`</div></div></div><div class="dvd"></div>`;
+  // FILL IN BLANKS
+  if(d.fb&&d.fb.length){
+    h+=`<div class="sec"><div class="sec-h"><div class="sec-ic ic-blue">🧩</div><div class="sec-t">تمارين تعبئة الفراغات<small>Fill in the Blanks</small></div></div>
+    <div class="ch-card"><div class="ch-tag ch-fb">✏️ Fill in the Blanks — املأي الفراغات</div>`;
+    d.fb.forEach((q,i)=>{h+=`<div class="qi"><div class="qt">${i+1}. <span class="en" style="display:inline">${q[0]}</span></div></div>`});
+    h+=`<div class="ans" style="margin-top:1rem"><b style="color:var(--green)">✅ الإجابات:</b><br>`;
+    d.fb.forEach((q,i)=>{h+=`<div class="ans-i"><span class="ans-ok">${i+1}. ${q[1]}</span></div>`});
+    h+=`</div></div></div><div class="dvd"></div>`;
+  }
+  // REPEAT AFTER ME
+  if(d.ex&&d.ex.length){
+    h+=`<div class="sec"><div class="sec-h"><div class="sec-ic ic-orange">🎙️</div><div class="sec-t">رددي ورايا<small>Repeat After Me</small></div></div>
+    <p style="color:var(--muted);margin-bottom:.8rem;font-size:.8rem">🔊 اضغطي على الزر واستمعي، بعدين رددي بصوت عالي — الصوت بطيء عشان تلحقين</p>`;
+    d.ex.slice(0,5).forEach(e=>{
+      h+=`<div class="rep-item"><button class="sp" onclick="say('${e[0].replace(/'/g,"\\'")}',0.5,null,'female',1)">🔊</button><div style="flex:1"><div class="rep-en">${e[0]}</div><div class="rep-ar">${e[1]}</div></div></div>`;
+    });
+    h+=`</div><div class="dvd"></div>`;
+  }
+  // KILLERS
+  if(d.kl&&d.kl.length){
+    h+=`<div class="sec"><div class="sec-h"><div class="sec-ic ic-red">🚨</div><div class="sec-t">الأخطاء القاتلة<small>Killer Mistakes</small></div></div>`;
+    d.kl.forEach((k,i)=>{h+=`<div class="klr"><div class="klr-tag">🔴 خطأ #${i+1}</div><div class="klr-w">❌ ${k[0]}</div><div class="klr-r">✅ ${k[1]} <button class="sp" onclick="say('${k[1].replace(/'/g,"\\'")}',0.7)" style="width:20px;height:20px;font-size:.6rem">🔊</button></div><div class="klr-y">💡 <b>ليش؟</b> ${k[2]}</div></div>`});
+    h+=`</div><div class="dvd"></div>`;
+  }
+  // CULTURE
+  h+=`<div class="sec"><div class="sec-h"><div class="sec-ic ic-purple">🌍</div><div class="sec-t">صدمة ثقافية<small>Culture Note</small></div></div>
+  <div class="cult"><div style="font-size:1.5rem;margin-bottom:.5rem">🇬🇧 🇺🇸</div><div class="cult-t">${d.cu[0]}</div><p style="color:#bbb;line-height:2;font-size:.85rem">${d.cu[1]}</p></div></div><div class="dvd"></div>`;
+  // MC CHALLENGES
+  if(d.mc&&d.mc.length){
+    h+=`<div class="sec"><div class="sec-h"><div class="sec-ic ic-blue">🧩</div><div class="sec-t">اختبري نفسك<small>Multiple Choice</small></div></div>
+    <div class="ch-card"><div class="ch-tag ch-mc">📝 اختاري الإجابة الصحيحة</div>`;
+    d.mc.forEach((q,qi)=>{
+      h+=`<div class="qi"><div class="qt">${qi+1}. <span class="en" style="display:inline">${q[0]}</span></div><div class="opts">`;
+      q[1].forEach((o,oi)=>{h+=`<div class="opt" onclick="chkMC(this,${oi===q[2]})">${String.fromCharCode(97+oi)}) ${o}</div>`});
+      h+=`</div></div>`;
+    });
+    h+=`</div></div><div class="dvd"></div>`;
+  }
+  // HOMEWORK
+  if(d.hw&&d.hw.length){
+    h+=`<div class="sec"><div class="sec-h"><div class="sec-ic ic-gold">🎯</div><div class="sec-t">الواجبات<small>Homework Missions</small></div></div>`;
+    d.hw.forEach((m,i)=>{h+=`<div class="hw-card"><div class="hw-n">${i+1}</div><div style="flex:1"><div class="hw-en">${m[0]}</div><div class="hw-ar">${m[1]}</div></div></div>`});
+    h+=`</div><div class="dvd"></div>`;
+  }
+  // UNLOCK
+  h+=`<div class="unlock"><div class="u-badge"><div class="u-icon">🔓</div><div class="u-text">SKILL UNLOCKED!</div><div class="u-sub">أكملتِ الدرس يا لمار! 🌟</div></div>
+  <button class="done-btn" onclick="finishL(${id})">✅ أكملت الدرس — التالي ←</button></div>`;
+  
+  $('lessonBox').innerHTML=h;
+}
+
+// ==================== INTERACTIONS ====================
+let dlSpd=0.75;let dlOn=false;
+function updSpd(el){el.parentElement.querySelectorAll('.spd').forEach(b=>b.classList.remove('a'));el.classList.add('a')}
+function playDL(){
+  if(!curLesson||!LD[curLesson])return;const d=LD[curLesson];const btn=$('dlPB');
+  if(dlOn){stopA();dlOn=false;btn.textContent='▶ تشغيل الحوار كامل';btn.classList.remove('on');return}
+  dlOn=true;btn.textContent='⏹ إيقاف';btn.classList.add('on');
+  let i=0;
+  function nx(){
+    if(i>=d.dl.length||!dlOn){dlOn=false;btn.textContent='▶ تشغيل الحوار كامل';btn.classList.remove('on');$('audioBar').classList.remove('show');return}
+    const dl=d.dl[i];const line=dl[1].replace(/<[^>]*>/g,'');
+    const isYou=dl[0]==='you';
+    const vc=isYou?'female':'male';
+    const pitch=isYou?1.05:0.9;
+    i++;
+    say(line,dlSpd,()=>setTimeout(nx,600),vc,pitch);
+  }
+  nx();
+}
+function chkMC(el,ok){if(el.classList.contains('ok')||el.classList.contains('no'))return;el.classList.add(ok?'ok':'no')}
+function finishL(id){markDone(id);const nx=LLIST.find(l=>l.id===id+1);if(nx&&LD[nx.id]){openL(nx.id)}else{hist.pop();showP('pgList');renderList()}}
+// INIT
+renderList();updProg();
+
+</script>
+</body>
+</html>
