@@ -707,7 +707,7 @@ function playDL(){
   nx();
 }
 function chkMC(el,ok){if(el.classList.contains('ok')||el.classList.contains('no'))return;el.classList.add(ok?'ok':'no')}
-function finishL(id){markDone(id);const nx=LLIST.find(l=>l.id===id+1);if(nx&&LD[nx.id]){openL(nx.id)}else{hist.pop();showP('pgList');renderList()}}
+function finishL(id){markDone(id);renderList();const nx=LLIST.find(l=>l.id===id+1);if(nx&&LD[nx.id]){openL(nx.id)}else{hist.pop();showP('pgList');renderList()}}
 // INIT
 renderList();updProg();
 
@@ -925,17 +925,7 @@ function shuffle(arr) {
 // ==================== 3. LESSON UNLOCK SYSTEM ====================
 let unlocked = JSON.parse(localStorage.getItem('lmr_unlock') || '[1]');
 
-function isUnlocked(id) {
-  return unlocked.includes(id) || id === 1;
-}
-
-function unlockNext(id) {
-  const next = id + 1;
-  if (!unlocked.includes(next) && next <= 25) {
-    unlocked.push(next);
-    localStorage.setItem('lmr_unlock', JSON.stringify(unlocked));
-  }
-}
+// Unlock handled by done array
 
 function goTest(lessonId) {
   const d = LD[lessonId];
@@ -1020,7 +1010,7 @@ function goTest(lessonId) {
     const res = $('testResult');
 
     if (passed) {
-      unlockNext(lid);
+      
       markDone(lid);
       res.style.background = 'rgba(46,204,113,.1)';
       res.style.borderColor = 'rgba(46,204,113,.2)';
