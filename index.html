@@ -486,11 +486,11 @@ function markDone(id){if(!done.includes(id)){done.push(id);localStorage.setItem(
 function renderList(){
   let h='';
   LLIST.forEach(l=>{
-    const d=done.includes(l.id);const has=!!LD[l.id];const open=isUnlocked(l.id);
-    h+=`<div class="lcard ${d?'done':''} ${!has||!open?'empty':''}" onclick="${has&&open?'openL('+l.id+')':''}">
-      <div class="lnum" style="${!open?'opacity:.3':''}">${l.id}</div>
+    const d=done.includes(l.id);const has=!!LD[l.id];
+    h+=`<div class="lcard ${d?'done':''} ${!has?'empty':''}" onclick="${has?'openL('+l.id+')':''}">
+      <div class="lnum">${l.id}</div>
       <div class="info"><div class="ten">${l.ic} ${l.en}</div><div class="tar">${l.ar}</div></div>
-      <div class="sts">${d?'✅':!has?'🔜':open?'▶':'🔒'}</div></div>`;
+      <div class="sts">${d?'✅':has?'▶':'🔜'}</div></div>`;
   });
   $('listGrid').innerHTML=h;
 }
